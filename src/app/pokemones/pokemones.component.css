@@ -1,0 +1,89 @@
+
+.filtro{
+    border-radius: 20px;
+    height: 45px;
+    padding: 7px;
+    margin: 10px;
+    border-style: none;
+    background-color: blueviolet;
+    color: white;
+    font-weight: bolder;
+}
+
+.displayfiltros{
+    list-style-type: none;
+    display: flex;
+}
+
+.pokecards{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.carta{
+    width: 200px;
+    display: none;
+    opacity: 0;
+    padding: 5px;
+    background-color: rgb(56, 1, 80);
+    margin: 10px;
+    border-radius: 20px;
+    transition: all 0.1s ;
+}
+.imgcard{
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+}
+.cardtexto{
+    text-align: center;
+    color: white;
+    font-weight: bolder;
+    font-size: 30px;
+}
+.show {
+    opacity: 1;
+    display: block;
+}
+
+.foto{
+    border-radius: 20px;
+}
+
+  .Defensivo>.foto{
+      background-color: rgb(0, 255, 0);
+      background-image: url(../../assets/img/background.jpg);
+      background-size: 50%;
+      background-blend-mode:hard-light;
+  }
+  .Ofensivo>.foto{
+      background-color: rgb(253, 122, 0);
+      background-image: url(../../assets/img/background.jpg);
+      background-size: 50%;
+      background-blend-mode:hard-light;
+  }
+  .Apoyo>.foto{
+      background-color:rgb(157, 255, 0);
+      background-image: url(../../assets/img/background.jpg);
+      background-size: 50%;
+      background-blend-mode:hard-light;
+  }
+  .Agil>.foto{
+      background-color: rgb(0, 255, 234);
+      background-image: url(../../assets/img/background.jpg);
+      background-size: 50%;
+      background-blend-mode:hard-light;
+  }
+  .Equilibrado>.foto{
+    background-color: purple;
+    background-image: url(../../assets/img/background.jpg);
+    background-size: 50%;
+    background-blend-mode: hard-light;
+  }
+  
+
+  
+
+  .carta:hover{
+    transform: scale(1.15);
+    }
