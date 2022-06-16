@@ -1,0 +1,22 @@
+.modal-content{
+    background-color: rgb(71, 71, 71);
+    color: aliceblue;
+}
+
+.btn-warning{
+    outline: none !important;
+    background:rgb(124, 25, 157);
+    border: rgb(72, 15, 91) 1px!important;
+    color: aliceblue;
+}
+
+.btn:focus{
+    outline: none !important;
+    box-shadow: none;
+}
+
+.btn-warning:focus{
+    outline: none !important;
+    box-shadow: none;
+    background:rgb(88, 18, 111);
+}

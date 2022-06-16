@@ -1,1 +1,60 @@
-<p>pokemon-form works!</p>
+<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#ModalPokemon">
+    Añadir Pokemon
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="ModalPokemon" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Registrar Nuevo Pokemon</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER-->
+          <div class="col-xs-1" align="center">
+           
+            <div class="formh5">
+              <h5>Pokemon</h5>
+              <input id="nombref" type="text" />
+            </div>
+           
+           
+
+            <div class="d-flex  justify-content-evenly">
+              <div>
+                <h5>Attack</h5>
+                <input type="number" id="atqf" name="points" step="1" min="0" max="100" value="0">
+               </div>
+               <div>
+                <h5>Special</h5>
+                <input type="number" id="spaf" name="points" step="1" min="0" max="100" value="0">
+               </div>
+               <div>
+                <h5>Defense</h5>
+                <input type="number" id="deff" name="points" step="1" min="0" max="100" value="0">
+               </div>
+               <div>
+                <h5>Speed</h5>
+                <input type="number" id="spef" name="points" step="1" min="0" max="100" value="0">
+               </div>
+            </div>
+
+            <div class="formh5">
+              <h5>Image</h5>
+              <input id="urlf" type="text" />
+            </div> 
+            <br>
+            <button (click)="RegistraPoke()" type="button" class="btn btn-warning" data-dismiss="modal">
+                Registrar
+            </button>     
+            <br>    
+           
+          <!-- REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER-->
+        </div>
+        <div class="modal-footer">
+          
+        </div>
+      </div>
+    </div>
+  </div>

@@ -7,9 +7,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PokemonFormComponent implements OnInit {
 
+  public Pnombre:string='';
+  public Purl: string = '';
+  public Patq: number = 0;
+  public Pspa: number = 0;
+  public Pdef: number = 0;
+  public Pspe: number = 0;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  RegistraPoke(){
+    this.Pnombre=(<HTMLInputElement>document.getElementById('nombref')).value
+    this.Purl=(<HTMLInputElement>document.getElementById('urlf')).value
+    this.Patq=parseInt((<HTMLInputElement>document.getElementById('atqf')).value);
+    this.Pspa=parseInt((<HTMLInputElement>document.getElementById('spaf')).value);
+    this.Pdef=parseInt((<HTMLInputElement>document.getElementById('deff')).value);
+    this.Pspe=parseInt((<HTMLInputElement>document.getElementById('spef')).value);
+    alert(this.Purl);
+  
   }
 
 }
