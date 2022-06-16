@@ -18,6 +18,7 @@
 .pokecards{
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
 }
 
 .carta{
@@ -51,31 +52,31 @@
 
   #Defensivo>.foto{
       background-color: rgb(0, 255, 0);
-      background-image: url(../../assets/img/background.jpg);
+      background-image: url(https://unite.pokemon.com/images/footer/background.jpg);
       background-size: 50%;
       background-blend-mode:hard-light;
   }
   #Ofensivo>.foto{
       background-color: rgb(253, 122, 0);
-      background-image: url(../../assets/img/background.jpg);
+      background-image: url(https://unite.pokemon.com/images/footer/background.jpg);
       background-size: 50%;
       background-blend-mode:hard-light;
   }
   #Apoyo>.foto{
       background-color:rgb(157, 255, 0);
-      background-image: url(../../assets/img/background.jpg);
+      background-image: url(https://unite.pokemon.com/images/footer/background.jpg);
       background-size: 50%;
       background-blend-mode:hard-light;
   }
   #Agil>.foto{
       background-color: rgb(0, 255, 234);
-      background-image: url(../../assets/img/background.jpg);
+      background-image: url(https://unite.pokemon.com/images/footer/background.jpg);
       background-size: 50%;
       background-blend-mode:hard-light;
   }
   #Equilibrado>.foto{
     background-color: purple;
-    background-image: url(../../assets/img/background.jpg);
+    background-image: url(https://unite.pokemon.com/images/footer/background.jpg);
     background-size: 50%;
     background-blend-mode: hard-light;
   }

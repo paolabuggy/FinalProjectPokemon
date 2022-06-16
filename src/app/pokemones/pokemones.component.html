@@ -21,8 +21,8 @@
     </ul>
 </div>
 
-<div class="pokecards" *ngFor="let poke of pokemones">
-  <div  class="card carta show" id={{poke.tipo}}>
+<div class="pokecards">
+  <div  class="card carta show" *ngFor="let poke of pokemones" id={{poke.tipo}}>
     <div class="foto">
       <img src={{poke.foto}} class="card-img-top imgcard" alt="...">
     </div>
