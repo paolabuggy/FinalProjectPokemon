@@ -5,14 +5,24 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './pokemones.component.html',
   styleUrls: ['./pokemones.component.css']
 })
-export class PokemonesComponent implements OnInit {
+
+
+
+
+export class PokemonesComponent implements OnInit{
+  pokemones:pokemones[]=[
+    {nombre:"Greedent", foto:"../../assets/img/greedent.png", tipo:"Defensivo"}
+  ];
 
   constructor() {
+    
    }
 
   ngOnInit(): void {
     this.filtro("all");
   }
+
+
 
 anadirclase(element:Element, name:string):void {
   var i, arr1, arr2;
@@ -43,8 +53,16 @@ filtro(c:string):void {
   if (c == "all") c = "";
   for (i = 0; i < x.length; i++) {
     this.quitarclase(x[i], "show");
-    if (x[i].className.indexOf(c) > -1) this.anadirclase(x[i], "show");
+    if (x[i].id.indexOf(c) > -1) this.anadirclase(x[i], "show");
   }
 }
 
+
+
+}
+
+export interface pokemones{
+  foto:string;
+  nombre:string;
+  tipo:string
 }

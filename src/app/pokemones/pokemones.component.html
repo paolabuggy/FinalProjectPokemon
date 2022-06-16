@@ -1,5 +1,4 @@
-  <h1>CHARLIE WAS HERE</h1>
-  <div class="menutipos">
+<div class="menutipos">
     <ul class="displayfiltros">
       <li class="lifiltro">
         <button class="filtro" (click)="filtro('all')">Todos los roles</button>
@@ -22,17 +21,16 @@
     </ul>
 </div>
 
-<div class="pokecards">
-    <div  class="card carta Defensivo" >
-      <div class="foto">
-        <img src="../../assets/img/greedent.png" class="card-img-top imgcard" alt="...">
-      </div>
-        <div class="card-body">
-          <p class="card-text cardtexto">Greedent</p>
-        </div>
-      
+<div class="pokecards" *ngFor="let poke of pokemones">
+  <div  class="card carta " id={{poke.tipo}}>
+    <div class="foto">
+      <img src={{poke.foto}} class="card-img-top imgcard" alt="...">
     </div>
-    <div class="card carta Ofensivo">
+    <div class="card-body">
+      <p class="card-text cardtexto">{{poke.nombre}}</p>
+    </div>
+  </div>
+    <!--<div class="card carta Ofensivo">
       <div class="foto">
         <img src="../../assets/img/espeon.png" class="card-img-top imgcard" alt="...">
       </div>
@@ -63,5 +61,6 @@
     <div class="card-body">
       <p class="card-text cardtexto">Aegislash</p>
     </div>
-</div>
+  </div>
+-->
 </div>

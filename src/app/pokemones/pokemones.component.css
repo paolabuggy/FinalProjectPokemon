@@ -50,7 +50,7 @@
     border-radius: 20px;
 }
 
-  .Defensivo>.foto{
+  #Defensivo>.foto{
       background-color: rgb(0, 255, 0);
       background-image: url(../../assets/img/background.jpg);
       background-size: 50%;
