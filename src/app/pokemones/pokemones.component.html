@@ -22,12 +22,12 @@
 </div>
 
 <div class="pokecards">
-  <div  class="card carta show" *ngFor="let poke of pokemones" id={{poke.tipo}}>
+  <div  class="card carta show" *ngFor="let poke of pokemones" id={{poke.data.tipo}}>
     <div class="foto">
-      <img src={{poke.foto}} class="card-img-top imgcard" alt="...">
+      <img src={{poke.data.foto}} class="card-img-top imgcard" alt="...">
     </div>
     <div class="card-body">
-      <p class="card-text cardtexto">{{poke.nombre}}</p>
+      <p class="card-text cardtexto">{{poke.data.nombre}}</p>
     </div>
   </div>
 </div>

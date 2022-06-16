@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FirestoreService } from '../servicios/firestore.service';
 
 @Component({
   selector: 'app-pokemones',
@@ -6,10 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pokemones.component.css']
 })
 
-
-
-
 export class PokemonesComponent implements OnInit{
+  /*
   pokemones:pokemones[]=[
     {nombre:"Greedent", foto:"https://unite.pokemon.com/images/pokemon/greedent/roster/roster-greedent.png", tipo:"Defensivo"},
     {nombre:"Espeon", foto:"https://unite.pokemon.com/images/pokemon/espeon/roster/roster-espeon.png", tipo:"Ofensivo"},
@@ -17,13 +16,25 @@ export class PokemonesComponent implements OnInit{
     {nombre:"Gengar", foto:"https://unite.pokemon.com/images/pokemon/gengar/roster/roster-gengar.png", tipo:"Agil"},
     {nombre:"Aegilash", foto:"https://unite.pokemon.com/images/pokemon/aegislash/roster/roster-aegislash.png", tipo:"Equilibrado"}
   ];
+  */
+  //public pokemones:pokemones[]=[];
+  public pokemones: any = [];
 
-  constructor() {
+  constructor(private firestoreService: FirestoreService) {
     
    }
 
   ngOnInit(): void {
     this.filtro("all");
+    this.firestoreService.getPokemones().subscribe((pokemonesSnapshot) => {
+      this.pokemones = [];
+      pokemonesSnapshot.forEach((pokemonData: any) => {
+        this.pokemones.push({
+          id: pokemonData.payload.doc.id,
+          data: pokemonData.payload.doc.data()
+        });
+      });
+    });
   }
 
 
@@ -61,12 +72,12 @@ filtro(c:string):void {
   }
 }
 
-
-
 }
 
+/*
 export interface pokemones{
   foto:string;
   nombre:string;
   tipo:string
 }
+*/
