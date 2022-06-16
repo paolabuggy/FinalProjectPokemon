@@ -11,7 +11,11 @@ import { Component, OnInit } from '@angular/core';
 
 export class PokemonesComponent implements OnInit{
   pokemones:pokemones[]=[
-    {nombre:"Greedent", foto:"../../assets/img/greedent.png", tipo:"Defensivo"}
+    {nombre:"Greedent", foto:"https://unite.pokemon.com/images/pokemon/greedent/roster/roster-greedent.png", tipo:"Defensivo"},
+    {nombre:"Espeon", foto:"https://unite.pokemon.com/images/pokemon/espeon/roster/roster-espeon.png", tipo:"Ofensivo"},
+    {nombre:"Hoopa", foto:"https://unite.pokemon.com/images/pokemon/hoopa/roster/roster-hoopa.png", tipo:"Apoyo"},
+    {nombre:"Gengar", foto:"https://unite.pokemon.com/images/pokemon/gengar/roster/roster-gengar.png", tipo:"Agil"},
+    {nombre:"Aegilash", foto:"https://unite.pokemon.com/images/pokemon/aegislash/roster/roster-aegislash.png", tipo:"Equilibrado"}
   ];
 
   constructor() {

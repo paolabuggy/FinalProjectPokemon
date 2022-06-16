@@ -22,7 +22,7 @@
 </div>
 
 <div class="pokecards" *ngFor="let poke of pokemones">
-  <div  class="card carta " id={{poke.tipo}}>
+  <div  class="card carta show" id={{poke.tipo}}>
     <div class="foto">
       <img src={{poke.foto}} class="card-img-top imgcard" alt="...">
     </div>
@@ -30,37 +30,4 @@
       <p class="card-text cardtexto">{{poke.nombre}}</p>
     </div>
   </div>
-    <!--<div class="card carta Ofensivo">
-      <div class="foto">
-        <img src="../../assets/img/espeon.png" class="card-img-top imgcard" alt="...">
-      </div>
-        <div class="card-body">
-          <p class="card-text cardtexto">Espeon</p>
-        </div>
-    </div>
-    <div class="card carta Apoyo" >
-      <div class="foto">
-        <img src="../../assets/img/hoopa.png" class="card-img-top imgcard" alt="...">
-      </div>
-        <div class="card-body">
-          <p class="card-text cardtexto">Hoopa</p>
-        </div>
-    </div>
-    <div class="card carta Agil" >
-      <div class="foto">
-      <img src="../../assets/img/gengar.png" class="card-img-top imgcard" alt="...">
-    </div>
-      <div class="card-body">
-        <p class="card-text cardtexto">Gengar</p>
-      </div>
-  </div>
-  <div class="card carta Equilibrado" >
-    <div class="foto">
-    <img src="../../assets/img/aegislash.png" class="card-img-top imgcard" alt="...">
-  </div>
-    <div class="card-body">
-      <p class="card-text cardtexto">Aegislash</p>
-    </div>
-  </div>
--->
 </div>
