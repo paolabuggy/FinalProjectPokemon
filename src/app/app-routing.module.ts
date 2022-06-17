@@ -7,11 +7,14 @@ import { HomeComponent } from './home/home.component';
 import { PokemonesComponent } from './pokemones/pokemones.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 
+//Route Guard para poner en dashboard
+import { AuthGuard } from './guard/auth.guard';
+
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'contacto', component: ContactoComponent},
   {path: 'faq', component: FaqComponent},
-  {path: 'cuenta', component: CuentaComponent},
+  {path: 'cuenta', component: CuentaComponent, canActivate: [AuthGuard] },
   {path: 'pokemon', component: PokemonesComponent},
   {path: 'login' , component: LoginPageComponent}
 ];
