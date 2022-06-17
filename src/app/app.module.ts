@@ -19,6 +19,13 @@ import { CuentaComponent } from './cuenta/cuenta.component';
 import { PokemonesComponent } from './pokemones/pokemones.component';
 
 import firebase from "firebase/compat/app";
+import { LoginFormComponent } from './ModalForms/login-form/login-form.component';
+import { PokemonFormComponent } from './ModalForms/pokemon-form/pokemon-form.component';
+import { RegisterFormComponent } from './ModalForms/register-form/register-form.component';
+import { SearchPokeFormComponent } from './ModalForms/search-poke-form/search-poke-form.component';
+import { SearchUserFormComponent } from './ModalForms/search-user-form/search-user-form.component';
+import { PokeGraphsComponent } from './Graficas/poke-graphs/poke-graphs.component';
+import { LoginPageComponent } from './login-page/login-page.component';
 firebase.initializeApp(environment.firebaseConfig);
 
 @NgModule({
@@ -29,7 +36,14 @@ firebase.initializeApp(environment.firebaseConfig);
     ContactoComponent,
     FaqComponent,
     CuentaComponent,
-    PokemonesComponent
+    PokemonesComponent,
+    LoginFormComponent,
+    PokemonFormComponent,
+    RegisterFormComponent,
+    SearchPokeFormComponent,
+    SearchUserFormComponent,
+    PokeGraphsComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
