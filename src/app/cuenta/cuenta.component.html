@@ -1,1 +1,22 @@
-<p>cuenta works!</p>
+<div class="container" *ngIf="authService.userData.displayName!='admin'; else contenidoAdmin">
+    <div>
+        <h1 class="h2">Perfil del usuario</h1>
+    </div>
+    <!-- Muestra los datos del usuario cuando logged in -->
+    <div *ngIf="authService.userData as user">
+        <div class="col-md-12">
+            <div class="media">
+                <img class="align-self-start mr-5 img-thumbnail rounded-circle"
+                    src="/assets/dummy-user.png">
+                <div class="media-body">
+                    <h1>Bienvenido <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h1>
+                    <p>User ID: <strong>{{user.uid}}</strong></p>
+                    <p>Correo: <strong>{{user.email}}</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<ng-template #contenidoAdmin>
+    <h1>Estas en modo admin</h1>
+</ng-template>
