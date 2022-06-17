@@ -8,7 +8,7 @@ import { PokemonesComponent } from './pokemones/pokemones.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 
 //Route Guard para poner en dashboard
-import { AuthGuard } from './guard/auth.guard';
+import { AuthGuard } from './servicios/guard/auth.guard';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
