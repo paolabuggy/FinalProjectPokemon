@@ -57,3 +57,68 @@ input{
     box-shadow: none;
     background:rgb(88, 18, 111);
 }
+
+.modal-content{
+    background-color: rgb(71, 71, 71);
+    color: aliceblue;
+}
+
+.btn-warning{
+    outline: none !important;
+    background:rgb(124, 25, 157);
+    border: rgb(72, 15, 91) 1px!important;
+    color: aliceblue;
+}
+
+.btn:focus{
+    outline: none !important;
+    box-shadow: none;
+}
+
+.btn-warning:focus{
+    outline: none !important;
+    box-shadow: none;
+    background:rgb(88, 18, 111);
+}
+
+
+ 
+.button-default {
+    color: white;
+    background-color: rgb(218, 152, 22);
+    text-align: center;
+    text-transform: uppercase;
+    padding: 12px 25px !important;
+    margin: 10px;
+    display: inline-block;
+    transition: all .5s ease;
+  }
+  
+  .button-slanted {
+    
+    font-family: 'Fugaz One', cursive;
+    transform: skewX(-10deg);
+  }
+  
+  .button-slanted-content {
+    
+    transform: skewX(-10deg);  
+    display: inline-block;
+    padding:10px 30px;
+    font-family: 'Fugaz One', cursive;
+  }
+
+  .button-slanted:hover{
+    display: inline-block;
+    transform: skewX(-10deg); 
+    box-shadow: 10px 0px #9900cc;
+    padding-left: 8px;
+    cursor: pointer;
+   
+
+  }
+
+  .button-default .loginb{
+    width: 500px !important;
+  }
+  
