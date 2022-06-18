@@ -1,23 +1,52 @@
-<div class="container" *ngIf="authService.userData.displayName!='admin'; else contenidoAdmin">
-    <div>
-        <h1 class="h2">Perfil del usuario</h1>
-    </div>
-    <!-- Muestra los datos del usuario cuando logged in -->
-    <div *ngIf="authService.userData as user">
-        <div class="col-md-12">
-            <div class="media">
-                <img class="align-self-start mr-5 img-thumbnail rounded-circle"
-                    src="../../assets/img/poke-user.jpg" alt="" height="250px" width="250px">
-                <div class="media-body">
-                    <h1>Bienvenido <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h1>
-                    <p>User ID: <strong>{{user.uid}}</strong></p>
-                    <p>Nombre Completo: <strong>{{user.photoURL}}</strong></p>
-                    <p>Correo: <strong>{{user.email}}</strong></p>
+
+
+<div class="container accmenu">
+    <div class="container" *ngIf="authService.userData.displayName!='admin'; else contenidoAdmin">
+        
+        <div class="ModoUser ">
+            <br>
+            <h1 class="h2">Perfil de usuario</h1>
+            <!-- Muestra los datos del usuario cuando logged in -->
+            <div *ngIf="authService.userData as user">
+                <div class="col-md-12">
+                    <div class="media">
+                        <img class="align-self-start mr-5 img-thumbnail rounded-circle"
+                            src="../../assets/img/poke-user.jpg" alt="" height="250px" width="250px">
+                        <div class="media-body">
+                            <br>
+                            <h4>Bienvenido   <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h4>
+                            <p>User ID: <br><strong>{{user.uid}}</strong></p>
+                            <p>Nombre Completo: <br><strong>{{user.photoURL}}</strong></p>
+                            <p>Correo: <br><strong>{{user.email}}</strong></p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+        
     </div>
+
+    <ng-template #contenidoAdmin>
+        <div class="ModoAdmin">
+            <br>
+            <h5>Herramientas de administrador</h5>
+            <section>
+                <div class="d-flex justify-content-around">
+                    <app-pokemon-form></app-pokemon-form>
+                    <app-search-poke-form></app-search-poke-form>
+                    <app-search-user-form></app-search-user-form>
+                   
+                    
+                </div>
+                <br>
+            </section>
+        </div>
+        
+       
+    </ng-template>
+    <br>
+    
 </div>
-<ng-template #contenidoAdmin>
-    <h1>Estas en modo admin</h1>
-</ng-template>
+
+
+

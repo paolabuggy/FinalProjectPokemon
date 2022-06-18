@@ -1,0 +1,20 @@
+.accmenu{
+    background: rgb(255, 255, 255);
+    box-shadow: 5px 5px rgba(83, 12, 106, 0.618);
+    border-radius: 5px;
+}
+
+.media-body p{
+    font-size: small;
+}
+
+.ModoUser{
+    text-align: center;
+    align-items:center;
+}
+
+.ModoAdmin{
+    text-align: center;
+    background: rgb(233, 232, 232);
+    border-radius: 5px;
+}
