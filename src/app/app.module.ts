@@ -32,6 +32,7 @@ import { AuthService } from './servicios/auth.service';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { PokemonPageComponent } from './pokemon-page/pokemon-page.component';
 
 firebase.initializeApp(environment.firebaseConfig);
 
@@ -50,7 +51,8 @@ firebase.initializeApp(environment.firebaseConfig);
     SearchPokeFormComponent,
     SearchUserFormComponent,
     PokeGraphsComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    PokemonPageComponent
   ],
   imports: [
     BrowserModule,
