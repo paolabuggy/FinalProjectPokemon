@@ -154,7 +154,7 @@
 }
 
 
-.infoInferior{
+.infoInferior, .contenSnor{
     display: flex;
     flex-direction: column;
 }
@@ -193,4 +193,9 @@ img {
 .derechas{
     padding-top: 20px;
     align-self:flex-end;
+}
+.snor{
+    width: 60%;
+    height: 60%;
+    align-self: center;
 }
