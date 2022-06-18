@@ -24,6 +24,7 @@
     border-right: 25px solid transparent;
     height: 0;
     width: 500px;
+    border-radius: 10px 10px 10px 10px;
 
 }
 
