@@ -48,3 +48,40 @@
     font-size: 25px;
     transform: translateY(-35px);
 }
+
+.equipo{
+    height: 600px;
+    background-image: url("../../assets/img/poketeam.jpg");
+    margin-left: -11%;
+    margin-right: -11%;
+    margin-top: -3%;
+    background-size:cover;
+
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+
+
+
+
+    .equipobotones{
+        width: 300px;
+        height: 100px;
+        transform: skew(20deg);
+        background: rgba(0, 0, 0, 0.719);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .botonequipo{
+        border-radius: 10px;
+        background-color: orange;
+        border: 1px solid brown;
+        height: 40px;
+        width: 220px;
+        transform: skew(-20deg);
+        
+    }
