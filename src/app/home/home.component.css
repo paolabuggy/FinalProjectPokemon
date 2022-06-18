@@ -85,3 +85,112 @@
         transform: skew(-20deg);
         
     }
+
+
+.infoHome{
+    background-color: darkmagenta;
+    margin-left: -11%;
+    margin-right: -11%;
+}
+.infoHome p{
+    color: white;
+}
+
+.infSuperior{
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+.contactos{
+    width: 400px;
+}
+.redes{
+    display: flex;
+    justify-content: space-around;
+}
+.fa {
+    padding: 20px;
+    font-size: 40px;
+    width: 80px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+}
+.fa:hover {
+    opacity: 0.7;
+}
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+.fa-youtube {
+    background: #bb0000;
+    color: white;
+}
+.fa-instagram {
+    background: #125688;
+    color: white;
+}
+.noticias{
+    padding-top: 20px;
+}
+.infoUnite{
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    margin: 10;
+    width: 400px;
+}
+.etiquetas{
+    display: flex;
+    flex-direction: column;
+    margin: 10;
+    padding: auto;
+    width: 400px;   
+}
+
+
+.infoInferior{
+    display: flex;
+    flex-direction: column;
+}
+.registrosDatos{
+
+}
+.registrosLegales{
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+}
+.lineorange{
+    color: darkorange;
+    font-size: 30px;
+}
+.registrosLegales a, a:focus, a:active{
+    text-decoration: none;
+    color: darkorange;
+    font-size: 30px;
+}
+.registrosLegales a:hover{
+    color:orange;
+}
+.registrosDatos p{
+    text-align: center;
+    font-size: 15px;
+}
+img {
+    display: block;
+  }
+.centrar{
+    padding-top: 20px;
+    align-self: center;
+}
+.derechas{
+    padding-top: 20px;
+    align-self:flex-end;
+}
