@@ -1,1 +1,37 @@
-<p>contacto works!</p>
+<div class="container">
+  <h1 class="brand"><span>Poke</span>mon Unite</h1>
+  <div class="wrapper animated bounceInLeft">
+    <div class="company-info">
+      <h3>Comparte con nosotros tus comentarios, dudas y sugerencias!</h3>
+      <img class="bola" src="../../assets/img/wigglypuff.png" alt="">
+    </div>
+    <div class="contact">
+      <h3>Contáctanos</h3>
+      <form #useForm="ngForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label>Nombre</label>
+          <input type="text" name="name" [(ngModel)]="objuser.name">
+        </div>
+        <div class="form-group">
+          <label>Apellido</label>
+          <input type="text" name="lastname" [(ngModel)]="objuser.lastname">
+        </div>
+        <div class="form-group">
+          <label>Correo Electronico</label>
+          <input type="email" name="email" [(ngModel)]="objuser.email">
+        </div>
+        <div class="form-group">
+          <label>Numero telefonico</label>
+          <input type="text" name="phone" [(ngModel)]="objuser.phone">
+        </div>
+        <div class="full form-group">
+          <label>Mensaje</label>
+          <textarea name="message" rows="5" [(ngModel)]="objuser.message"></textarea>
+        </div>
+        <div class="full">
+          <button class="submit" type="submit">Enviar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

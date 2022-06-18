@@ -9,6 +9,7 @@
 
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 70px;
 }
 
 
@@ -18,17 +19,74 @@
 
     border-radius: 50px 0px 0px 0px;
     background-image: linear-gradient(to left, rgba(255,0,0,0)0%, rgba(255,0,0,1)20%);
+    margin-right: 100px;
 }
+.verde{
+    background-image: linear-gradient(to left, rgba(255,0,0,0)0%, rgb(0, 255, 0)20%);
+}
+.azul{
+    background-image: linear-gradient(to left, rgba(255,0,0,0)0%, rgb(0, 0, 255)20%);
+}
+.morado{
+    background-image: linear-gradient(to left, rgba(255,0,0,0)0%, rgb(200, 0, 255)20%);
+}
+.amarillo{
+    background-image: linear-gradient(to left, rgba(255,0,0,0)0%, rgb(255, 255, 0)20%);
+}
+.rosa{
+    background-image: linear-gradient(to left, rgba(255,0,0,0)0%, rgb(255, 0, 255)20%);
+}
+.naranja{
+    background-image: linear-gradient(to left, rgba(255,0,0,0)0%, rgb(255, 150, 0)20%);
+}
+.cian{
+    background-image: linear-gradient(to left, rgba(255,0,0,0)0%, rgb(0, 255, 255)20%);
+}
+.gris{
+    background-image: linear-gradient(to left, rgba(255,0,0,0)0%, rgb(116, 116, 116)20%);
+} 
 
 .abajo{
     display: flex;
     flex-wrap: wrap;
-    border-left: 2px solid orange;
-    border-bottom: 2px solid orange;
-
+    border-left: 2px solid red;
+    border-bottom: 2px solid red;
     width: 100%;
     
 }
+.averde{
+    border-left: 2px solid rgb(0, 255, 0);
+    border-bottom: 2px solid rgb(0, 255, 0);
+}
+.aazul{
+    border-left: 2px solid rgb(0, 0, 255);
+    border-bottom: 2px solid rgb(0, 0, 255);
+}
+.amorado{
+    border-left: 2px solid rgb(200, 0, 255);
+    border-bottom: 2px solid rgb(200, 0, 255);
+}
+.aamarillo{
+    border-left: 2px solid rgb(255, 255, 0);
+    border-bottom: 2px solid rgb(255, 255, 0);
+}
+.arosa{
+    border-left: 2px solid rgb(255, 0, 255);
+    border-bottom: 2px solid rgb(255, 0, 255);
+}
+.anaranja{
+    border-left: 2px solid rgb(255, 150, 0);
+    border-bottom: 2px solid rgb(255, 150, 0);
+}
+.acian{
+    border-left: 2px solid rgb(0, 255, 255);
+    border-bottom: 2px solid rgb(0, 255, 255);
+}
+.agris{
+    border-left: 2px solid rgb(116, 116, 116);
+    border-bottom: 2px solid rgb(116, 116, 116);
+} 
+
 
 .izquierda{
     padding-left: 50px;
@@ -44,13 +102,17 @@
 
 .imagenderecha{
     width: 100%;
-    height: 100%;
+    height: auto;
 
-    transform: scale(1.4) translateY(-25px);
+    transform: scale(1.4) translateY(-15px) translateX(60px);
     
 }
+
 
 .carrusel{
     width: 100%;
     height: 100%;
+}
+li, p{
+    font-size: 25px;
 }

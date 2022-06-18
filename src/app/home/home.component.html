@@ -10,80 +10,33 @@
     <button class="botonequipo">Descargar Pokemon Unite</button>
   </div>
 </div>
+<div class="roster">
+<div class="textoroster">
+  <div class="tarjetaroster">
+    <h2 class="arriba">Nuestro roster</h2>
+    <p class="abajo">Pokemon unite ofrece una gran seleccion de pokemon para jugar. ¡Encuentra tu favorito!</p>
+  </div>
+</div>
 
-<div
-  id="carouselExampleDark"
-  class="carousel carousel-dark slide"
-  data-bs-ride="carousel"
->
-  <div class="carousel-indicators">
-    <button
-      type="button"
-      data-bs-target="#carouselExampleDark"
-      data-bs-slide-to="0"
-      class="active"
-      aria-current="true"
-      aria-label="Slide 1"
-    ></button>
-    <button
-      type="button"
-      data-bs-target="#carouselExampleDark"
-      data-bs-slide-to="1"
-      aria-label="Slide 2"
-    ></button>
-    <button
-      type="button"
-      data-bs-target="#carouselExampleDark"
-      data-bs-slide-to="2"
-      aria-label="Slide 3"
-    ></button>
+<div class="carrusel">
+  <div id="carouselExampleControls" class="carousel slide carruselfotos" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      
+      <div  *ngFor="let poke of pokemones; first as isFirst" id={{poke.data.tipo}} [ngClass]="isFirst ? 'carousel-item active' : 'carousel-item' ">
+        <img src={{poke.data.foto}} class="d-block w-100 foto" alt="...">
+      </div>
+
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active" data-bs-interval="3000">
-      <img
-        src="assets/img/11.png"
-        class="d-block w-100"
-        style="width: 18rem"
-        alt="..."
-      />
-      <div class="carousel-caption d-none d-md-block">
-        <h5>espantaviej@s</h5>
-        <p>no</p>
-      </div>
-    </div>
-    <div class="carousel-item" data-bs-interval="2000">
-      <img src="assets/img/22.jpeg" class="d-block w-100" alt="..." />
-      <div class="carousel-caption d-none d-md-block">
-        <h5>guidoverso</h5>
-        <p>si</p>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img src="assets/img/33.jpg" class="d-block w-100" alt="..." />
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Guido-sama</h5>
-        <p>si</p>
-      </div>
-    </div>
-  </div>
-  <button
-    class="carousel-control-prev"
-    type="button"
-    data-bs-target="#carouselExampleDark"
-    data-bs-slide="prev"
-  >
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button
-    class="carousel-control-next"
-    type="button"
-    data-bs-target="#carouselExampleDark"
-    data-bs-slide="next"
-  >
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
+</div>
 </div>
 
 
@@ -173,5 +126,8 @@
         LLC.
       </p>
     </div>
+  </div>
+  <div class="contenSnor">
+    <img src="https://unite.pokemon.com/images/footer/snorlax.png" alt="" class="snor">
   </div>
 </div>

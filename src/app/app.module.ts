@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // Firebase services + environment module
 import { AngularFireModule } from '@angular/fire/compat';
@@ -27,8 +26,13 @@ import { SearchPokeFormComponent } from './ModalForms/search-poke-form/search-po
 import { SearchUserFormComponent } from './ModalForms/search-user-form/search-user-form.component';
 import { PokeGraphsComponent } from './Graficas/poke-graphs/poke-graphs.component';
 import { LoginPageComponent } from './login-page/login-page.component';
+
 // Auth service
 import { AuthService } from './servicios/auth.service';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 firebase.initializeApp(environment.firebaseConfig);
 
 @NgModule({
@@ -46,8 +50,7 @@ firebase.initializeApp(environment.firebaseConfig);
     SearchPokeFormComponent,
     SearchUserFormComponent,
     PokeGraphsComponent,
-    LoginPageComponent,
-
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
@@ -57,6 +60,7 @@ firebase.initializeApp(environment.firebaseConfig);
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireDatabaseModule,
+    HttpClientModule,
     FormsModule,
     ReactiveFormsModule
   ],
