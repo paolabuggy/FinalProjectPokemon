@@ -1,0 +1,43 @@
+.headerimg{
+    height: 600px;
+    background-image: url("../../assets/img/PokemonallBackground.jpg");
+    margin-left: -11%;
+    margin-right: -11%;
+    margin-top: -3%;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items:flex-end;
+}
+.textoheader{
+    margin-bottom: 40px;
+
+    background-color: rgba(0, 0, 0, 0.712);
+
+    height: 100px;
+    width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.tituloheader{
+    background-color: orange;
+    border: 1px solid brown;
+    width: 200px;
+    height: 50px;
+    transform: translateY(-20px);
+    text-align: center;
+    padding-top: 10px;
+
+    border-radius: 20px 0px 20px 0px;
+}
+
+.cuerpoheader{
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 25px;
+    transform: translateY(-25px);
+}
