@@ -45,7 +45,8 @@ firebase.initializeApp(environment.firebaseConfig);
     SearchPokeFormComponent,
     SearchUserFormComponent,
     PokeGraphsComponent,
-    LoginPageComponent
+    LoginPageComponent,
+
   ],
   imports: [
     BrowserModule,

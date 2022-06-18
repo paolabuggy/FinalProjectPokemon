@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { PokemonesComponent } from './pokemones/pokemones.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { PokeGraphsComponent } from './Graficas/poke-graphs/poke-graphs.component';
+
 //Route Guard para poner en dashboard
 import { AuthGuard } from './servicios/guard/auth.guard';
 
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path: 'cuenta', component: CuentaComponent, canActivate: [AuthGuard] },
   {path: 'pokemon', component: PokemonesComponent},
   {path: 'login' , component: LoginPageComponent},
-  {path: 'graphs',component:PokeGraphsComponent}
+  {path: 'graphs',component:PokeGraphsComponent},
+
 ];
 
 @NgModule({
