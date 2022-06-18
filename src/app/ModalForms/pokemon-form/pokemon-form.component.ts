@@ -13,6 +13,7 @@ export class PokemonFormComponent implements OnInit {
   public Pspa: number = 0;
   public Pdef: number = 0;
   public Pspe: number = 0;
+  public Ptip: string = '';
 
   constructor() { }
 
@@ -26,7 +27,8 @@ export class PokemonFormComponent implements OnInit {
     this.Pspa=parseInt((<HTMLInputElement>document.getElementById('spaf')).value);
     this.Pdef=parseInt((<HTMLInputElement>document.getElementById('deff')).value);
     this.Pspe=parseInt((<HTMLInputElement>document.getElementById('spef')).value);
-    alert(this.Purl);
+    this.Ptip=(<HTMLInputElement>document.getElementById('tipof')).value;
+    alert(this.Ptip);
   
   }
 
