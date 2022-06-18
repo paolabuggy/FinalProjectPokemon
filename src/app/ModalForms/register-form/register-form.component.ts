@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../../models/usuario';
 import { AuthService } from 'src/app/servicios/auth.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-register-form',
@@ -8,59 +10,63 @@ import { AuthService } from 'src/app/servicios/auth.service';
   styleUrls: ['./register-form.component.css']
 })
 export class RegisterFormComponent implements OnInit {
-  public ArrUsuarios: Usuario[] = [];
-  public Unombre:string= '';
-  public Uapellido:string='';
+  
+  public UnombreC: string = '';
   public Uname: string = '';
-  public Usex: string = '';
   public Uemail: string = '';
   public Udate: string = '';
-  public User: Usuario = {
-    nombre: '',
-    apellido:'',
-    username:'',
-    sexo: '',
-    email: '',
-    fechaNac: '',
-  };
+  public Upassw1: string = '';
+  public Upassw2: string = '';
+
+  password: any = "";
+  password_repeat: any = "";
 
   constructor(public authService: AuthService) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
-  guardaUsuario() {
-    this.Unombre=(<HTMLInputElement>document.getElementById('nombref')).value;
-    this.Uapellido=(<HTMLInputElement>document.getElementById('apellidof')).value;
-    this.Uname = (<HTMLInputElement>document.getElementById('unamef')).value;
-    this.Usex = (<HTMLInputElement>document.getElementById('sexof')).value;
-    this.Uemail = (<HTMLInputElement>document.getElementById('emailf')).value;
-    this.Udate = (<HTMLInputElement>document.getElementById('fechaf')).value;
-    if (/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/i.test(this.Uemail)) {
-      if(this.Uname == '' || this.Usex == '' || this.Uemail == '' || this.Udate == ''){
-        alert('Datos incompletos');
+  resultado!: string;
+
+  formularioContacto = new FormGroup({
+    nombre: new FormControl('', Validators.required),
+    userName: new FormControl('', [Validators.required, Validators.maxLength(10)]),
+    mail: new FormControl('', [Validators.required, Validators.email]),
+    passwordf1: new FormControl('', [Validators.required, Validators.minLength(6)]),
+    passwordf2: new FormControl('', [Validators.required, Validators.minLength(6)])
+  }
+  );
+
+  submit() {
+    if (this.formularioContacto.valid) {
+      
+      this.password=this.formularioContacto.value['passwordf1'];
+      this.password_repeat=this.formularioContacto.value['passwordf2'];
+
+      if (this.password == this.password_repeat) {
+        this.UnombreC = this.formularioContacto.value['nombre'];
+        this.Uname = this.formularioContacto.value['userName'];
+        this.Uemail = this.formularioContacto.value['mail'];
+        
+        this.authService.SignUp(this.Uname, this.Uemail, this.password, this.UnombreC);
+        (<HTMLInputElement>document.getElementById('nombrecompletof')).value="";
+        (<HTMLInputElement>document.getElementById('unamef')).value="";
+        (<HTMLInputElement>document.getElementById('emailf')).value="";
+        (<HTMLInputElement>document.getElementById('passwordf1')).value="";
+        (<HTMLInputElement>document.getElementById('passwordf2')).value="";
+      } else {
+        alert('Las contraseñas ingresadas no coinciden');
+        (<HTMLInputElement>document.getElementById('passwordf1')).value="";
+        (<HTMLInputElement>document.getElementById('passwordf2')).value="";
       }
-      else{
-        this.User = {
-          nombre:this.Unombre,
-          apellido:this.Uapellido,
-          username: this.Uname,
-          sexo: this.Usex,
-          email: this.Uemail,
-          fechaNac: this.Udate,
-        };
-        alert('Usuario creado con exito!');
-
-        this.ArrUsuarios.push(this.User);
-        alert(this.User.nombre);
-        //En caso de querer guardar en localstorage
-        //localStorage.setItem('Usuarios', JSON.stringify(this.ArrUsuarios));
-      }
-    }
-    else{
-      alert('Ingrese un correo valido');
+    } else {
+      alert('Se ingresaron datos invalidos');
+      (<HTMLInputElement>document.getElementById('nombrecompletof')).value="";
+      (<HTMLInputElement>document.getElementById('unamef')).value="";
+      (<HTMLInputElement>document.getElementById('emailf')).value="";
+      (<HTMLInputElement>document.getElementById('passwordf1')).value="";
+      (<HTMLInputElement>document.getElementById('passwordf2')).value="";
     }
 
-     
   }
 
 }

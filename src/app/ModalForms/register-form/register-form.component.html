@@ -1,5 +1,6 @@
 <!-- Button trigger modal -->
-<button type="button" class=" button-default button-slanted loginb button-slanted-content" data-bs-toggle="modal" data-bs-target="#exampleModal">
+<button type="button" class=" button-default button-slanted loginb button-slanted-content" data-bs-toggle="modal"
+  data-bs-target="#exampleModal">
   Registrar
 </button>
 
@@ -14,64 +15,84 @@
       <div class="modal-body">
         <!-- REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER-->
         <div class="col-xs-1" align="center">
-          <br />
-          <div class="formh5">
-            <h5>Nombre Completo</h5>
-            <input id="nombref" type="text" #nombreC required/>
-          </div>
-          <!--
-          <div class="formh5">
-            <h5>Apellido</h5>
-            <input id="apellidof" type="text" #apellido required/>
-          </div>
+          <br/>
           
-          <div class="d-flex  justify-content-center">
+          <form [formGroup]="formularioContacto" (ngSubmit)="submit()" id="formulario">
             <div class="formh5">
-              <h5>Sexo</h5>
-    
-              <select id="sexof">
-                <option value="Hombre">Hombre</option>
-                <option value="Mujer">Mujer</option>
-              </select>
+                <h5>Nombre completo:</h5>
+                <input type="text" formControlName="nombre" id="nombrecompletof" required>
+                <div class="formh5">
+                <p><span *ngIf="this.formularioContacto.get('nombre')?.errors?.['required']">
+                  (El nombre no puede quedar vacío)
+                </span></p>
+              </div>
+              
             </div>
-            
             <div class="formh5">
-              <h5>Fecha de Nacimiento</h5>
-    
-              <input
-                type="date"
-                class="fechaform"
-                id="fechaf"
-                value="2022-01-01"
-                min="1900-01-01"
-                max="2999-12-31"
-              />
+              <h5>Usuario:</h5>
+                <input type="text" formControlName="userName" id="unamef" required>
+                <div class="formh5">
+                  <p><span *ngIf="this.formularioContacto.get('userName')?.errors?.['required']">
+                  (El usuario no puede quedar vacío)
+                </span>
+                <span *ngIf="this.formularioContacto.get('userName')?.errors?.['maxlength']">
+                  (Debe tener como máximo 10 caracteres)
+                </span>
+              </p>
             </div>
-          </div> -->
-          <div class="formh5">
-            <h5>Username</h5>
-            <input id="unamef" type="text" #userName required/>
-          </div>
-          <div class="formh5">
-            <h5>Password</h5>
-            <input id="passwordf" type="text" #userPwd required/>
-          </div>
-          <div class="formh5">
-            <h5>Email</h5>
-            <input id="emailf" type="text" #userEmail required/>
-          </div>
-          <br>
-          
-        <!-- REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER-->
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-          Salir
-        </button>
-        <button (click)="authService.SignUp(userName.value, userEmail.value, userPwd.value, nombreC.value)" type="button" class="btn btn-primary">
-          Guardar Usuario
-        </button>
+            </div>
+
+            <div class="formh5">
+              <h5>Email:</h5>
+                <input type="text" formControlName="mail" id="emailf">
+                <div class="formh5">
+                  <p><span *ngIf="this.formularioContacto.get('mail')?.errors?.['required']">
+                  (El email no puede quedar vacío)
+                </span>
+                <span *ngIf="this.formularioContacto.get('mail')?.errors?.['email']">
+                  (El email no es válido)
+                </span>
+              </p>
+            </div>
+            </div>
+            <div class="formh5">
+              <h5>Password:</h5>
+                <input type="text" formControlName="passwordf1" id="passwordf1" required>
+                <div class="formh5">
+                  <p><span *ngIf="this.formularioContacto.get('passwordf1')?.errors?.['required']">
+                  (Este campo no puede quedar vacío)
+                </span>
+                <span *ngIf="this.formularioContacto.get('passwordf1')?.errors?.['minlength']">
+                  (Debe tener como mínimo 6 caracteres)
+                </span>
+              </p>
+            </div>
+            </div>
+            <div class="formh5">
+              <h5>Confirm password:</h5>
+                <input type="text" formControlName="passwordf2" id="passwordf2" required>
+                <div class="formh5">
+                  <p><span *ngIf="this.formularioContacto.get('passwordf2')?.errors?.['required']">
+                  (Este campo no puede quedar vacío)
+                </span>
+                <span *ngIf="this.formularioContacto.get('passwordf2')?.errors?.['minlength']">
+                  (Debe tener como mínimo 6 caracteres)
+                </span>
+                <span *ngIf="this.formularioContacto.errors?.['passwordCoincide']">
+                  (Las contraseñas no coinciden)
+                </span>
+              </p>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar Usuario</button>
+          </form>
+          <!-- REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER-->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            Salir
+          </button>
+        </div>
       </div>
     </div>
   </div>
-</div>

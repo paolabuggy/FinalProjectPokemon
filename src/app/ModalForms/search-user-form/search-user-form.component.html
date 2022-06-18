@@ -1,39 +1,39 @@
 <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#ModalSearchUser">
-    Buscar Usuario
-  </button>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="ModalSearchUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Buscar Usuario</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <!-- REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER-->
-          <div class="col-xs-1" align="center">
-            
-            <div class="d-flex  justify-content-evenly">
-                <button (click)="SeleccionarMetodo(1)" type="button" class="btn btn-secondary" data-dismiss="modal">
-                    ID
-                  </button>
-                  <button (click)="SeleccionarMetodo(2)" type="button" class="btn btn-secondary" data-dismiss="modal">
-                    Nombre
-                  </button>
-                  
-            </div>
+  Buscar Usuario
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="ModalSearchUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Buscar Usuario</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER-->
+        <div class="col-xs-1" align="center">
+
+          <div class="d-flex  justify-content-evenly">
+            <button (click)="SeleccionarMetodo(1)" type="button" class="btn btn-secondary" data-dismiss="modal">
+              ID
+            </button>
+            <button (click)="SeleccionarMetodo(2)" type="button" class="btn btn-secondary" data-dismiss="modal">
+              Nombre
+            </button>
+
+          </div>
+          <br>
+
+          <div *ngIf="buscId" class="container">
+            <h5>Ingresa id</h5>
+            <input id="idf" type="text" />
             <br>
-            
-            <div *ngIf="buscId" class="container">
-              <h5>Ingresa id</h5>
-              <input id="idf" type="text" />
-              <br>
-              <br>
-              <button  (click)="BuscaID()" type="button" class="btn btn-warning" data-dismiss="modal">
-                  Buscar
-              </button>
-              <br>
+            <br>
+            <button (click)="BuscaID()" type="button" class="btn btn-warning" data-dismiss="modal">
+              Buscar
+            </button>
+            <br>
           </div>
           <div *ngIf="buscName" class="container">
             <h5>Ingresa username</h5>
@@ -41,17 +41,17 @@
             <br>
             <br>
             <button (click)="BuscaNombre()" type="button" class="btn btn-warning" data-dismiss="modal">
-                Buscar
+              Buscar
             </button>
             <br>
-        </div>
+          </div>
 
 
-           
+
           <!-- REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER-->
         </div>
         <div class="modal-footer">
-          
+
         </div>
       </div>
     </div>

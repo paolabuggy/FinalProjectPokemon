@@ -41,6 +41,7 @@ export class AuthService {
       .then((result) => {
         this.ngZone.run(() => {
           this.router.navigate(['pokemon']);
+          //window.alert(JSON.stringify(result.user?.displayName));
         });
         this.SetUserData(result.user);
       })
@@ -51,22 +52,25 @@ export class AuthService {
 
   // Registrarse con email/password y nombre de usuario
   SignUp(username:string, email: string, password: string, completeName: string) {
-    return this.afAuth
+    if((username!="admin" && completeName!="Administrador") && username!="admin" && completeName!="Administrador"){
+      return this.afAuth
       .createUserWithEmailAndPassword(email, password)
       .then((result) => {
-        //Cuando es nuevo usuario, se llama a setUserData
-        //para el registro y devuelve la promesa
-        window.alert("Usuario creado exitosamente");
-        this.SetUserData(result.user);
-        //Cambia el displayName al nombre del usuario
-        this.usuario=getAuth();
-        updateProfile(this.usuario.currentUser, {displayName: username, photoURL: completeName });
-        
-        this.router.navigate(['home']);
+          //Cuando es nuevo usuario, se llama a setUserData
+          //para el registro y devuelve la promesa
+          window.alert("Usuario creado exitosamente");
+          this.SetUserData(result.user);
+          //Cambia el displayName al nombre del usuario
+          this.usuario=getAuth();
+          updateProfile(this.usuario.currentUser, {displayName: username, photoURL: completeName });
+          this.router.navigate(['home']);
       })
       .catch((error) => {
         window.alert(error.message);
       });      
+    }else{
+      return window.alert("No se puede utilizar ese nombre de usuario");
+    }
   }
 
   /* Configuración de datos de usuario al iniciar sesión con username/password,
@@ -97,7 +101,7 @@ export class AuthService {
     });
   }
 
-  // Returns true when user is looged in and email is verified
+  // Returns true when user is looged in 
   get isLoggedIn(): boolean {
     const user = JSON.parse(localStorage.getItem('user')!);
     return (user !== null) ? true : false;

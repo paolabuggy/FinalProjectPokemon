@@ -1,124 +1,122 @@
-h6{
-    text-align: center;
-    margin-left: 37.5%;
-    font-size: large;
+h6 {
+  text-align: center;
+  margin-left: 37.5%;
+  font-size: large;
 }
 
-h5{
-    font-size: 12px;
+h5 {
+  font-size: 15px;
 }
 
-input{
-    width: 400px;
+p {
+  font-size: 12px;
+  color: rgb(252, 187, 187);
 }
 
-#unamef,#passwordf,#emailf{
-    width: 300px;
+input {
+  width: 400px;
 }
 
-.formh5{
-    margin-bottom: 5px;
+#unamef,
+#passwordf1,
+#passwordf2,
+#emailf, 
+#nombrecompletof {
+  width: 300px;
 }
 
-.fechaform{
-    width: 140px;
+.formh5 {
+  margin-bottom: 5px;
 }
 
-
-.modal-content{
-    background-color: rgb(67, 67, 67);
-    color:white ;
+.modal-content {
+  background-color: rgb(67, 67, 67);
+  color: white;
 }
 
-.btn-primary{
-    background-color: blueviolet;
+.btn-primary {
+  background-color: blueviolet;
+  margin-bottom: 10px;
 }
 
-
-.modal-content{
-    background-color: rgb(71, 71, 71);
-    color: aliceblue;
+.modal-content {
+  background-color: rgb(71, 71, 71);
+  color: aliceblue;
 }
 
-.btn-warning{
-    outline: none !important;
-    background:rgb(124, 25, 157);
-    border: rgb(72, 15, 91) 1px!important;
-    color: aliceblue;
+.btn-warning {
+  outline: none !important;
+  background: rgb(124, 25, 157);
+  border: rgb(72, 15, 91) 1px !important;
+  color: aliceblue;
 }
 
-.btn:focus{
-    outline: none !important;
-    box-shadow: none;
+.btn:focus {
+  outline: none !important;
+  box-shadow: none;
 }
 
-.btn-warning:focus{
-    outline: none !important;
-    box-shadow: none;
-    background:rgb(88, 18, 111);
+.btn-warning:focus {
+  outline: none !important;
+  box-shadow: none;
+  background: rgb(88, 18, 111);
 }
 
-.modal-content{
-    background-color: rgb(71, 71, 71);
-    color: aliceblue;
+.modal-content {
+  background-color: rgb(71, 71, 71);
+  color: aliceblue;
 }
 
-.btn-warning{
-    outline: none !important;
-    background:rgb(124, 25, 157);
-    border: rgb(72, 15, 91) 1px!important;
-    color: aliceblue;
+.btn-warning {
+  outline: none !important;
+  background: rgb(124, 25, 157);
+  border: rgb(72, 15, 91) 1px !important;
+  color: aliceblue;
 }
 
-.btn:focus{
-    outline: none !important;
-    box-shadow: none;
+.btn:focus {
+  outline: none !important;
+  box-shadow: none;
 }
 
-.btn-warning:focus{
-    outline: none !important;
-    box-shadow: none;
-    background:rgb(88, 18, 111);
+.btn-warning:focus {
+  outline: none !important;
+  box-shadow: none;
+  background: rgb(88, 18, 111);
 }
 
-
- 
 .button-default {
-    color: white;
-    background-color: rgb(218, 152, 22);
-    text-align: center;
-    text-transform: uppercase;
-    padding: 12px 25px !important;
-    margin: 10px;
-    display: inline-block;
-    transition: all .5s ease;
-  }
-  
-  .button-slanted {
-    
-    font-family: 'Fugaz One', cursive;
-    transform: skewX(-10deg);
-  }
-  
-  .button-slanted-content {
-    
-    transform: skewX(-10deg);  
-    display: inline-block;
-    padding:10px 30px;
-    font-family: 'Fugaz One', cursive;
-  }
+  color: white;
+  background-color: rgb(218, 152, 22);
+  text-align: center;
+  text-transform: uppercase;
+  padding: 12px 25px !important;
+  margin: 10px;
+  display: inline-block;
+  transition: all 0.5s ease;
+}
 
-  .button-slanted:hover{
-    display: inline-block;
-    transform: skewX(-10deg); 
-    box-shadow: 10px 0px #9900cc;
-    padding-left: 8px;
-    cursor: pointer;
-   
+.button-slanted {
+  font-family: "Fugaz One", cursive;
+  transform: skewX(-10deg);
+}
 
-  }
+.button-slanted-content {
+  transform: skewX(-10deg);
+  display: inline-block;
+  padding: 10px 30px;
+  font-family: "Fugaz One", cursive;
+}
 
-  .button-default .loginb{
-    width: 500px !important;
-  }
-  
+.button-slanted:hover {
+  display: inline-block;
+  transform: skewX(-10deg);
+  box-shadow: 10px 0px #9900cc;
+  padding-left: 8px;
+  cursor: pointer;
+}
+
+.button-default .loginb {
+  width: 500px !important;
+}
+

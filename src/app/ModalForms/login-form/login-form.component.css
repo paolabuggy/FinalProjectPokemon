@@ -8,6 +8,7 @@
     background:rgb(124, 25, 157);
     border: rgb(72, 15, 91) 1px!important;
     color: aliceblue;
+    margin-bottom: 10px;
 }
 
 .btn:focus{
