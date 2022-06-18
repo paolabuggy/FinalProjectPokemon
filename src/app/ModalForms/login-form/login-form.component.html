@@ -3,7 +3,7 @@
   </button>-->
 
   <div  type="button" class="button-default button-slanted loginb"  data-bs-toggle="modal" data-bs-target="#Login">
-    <span class="button-slanted-content">Logearse</span>
+    <span class="button-slanted-content">Loguearse</span>
   </div>
   
   <!-- Modal -->
@@ -15,29 +15,27 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <!-- REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER-->
+          <!-- LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN-->
           <div class="col-xs-1" align="center">
             
             <div  class="container">
-              <h5>Username</h5>
-              <input id="Unamef" type="text" />
+              <h5>Email</h5>
+              <input id="Unamef" type="text" #userEmail required/>
               <br>
               <br>
           </div>
           <div  class="container">
             <h5>Password</h5>
-            <input id="Passwordf" type="text" />
+            <input id="Passwordf" type="text" #userPwd required/>
             <br>
             <br>
-            <button  (click)="Loguearse()" type="button" class="btn btn-warning" data-dismiss="modal">
+            <button  (click)="authService.SignIn(userEmail.value, userPwd.value)" type="button" class="btn btn-warning" data-dismiss="modal">
                 Ingresar
             </button>
             <br>
         </div>
 
-
-           
-          <!-- REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER-->
+          <!-- LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN-->
         </div>
         <div class="modal-footer">
           

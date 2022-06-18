@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../../models/usuario';
+import { AuthService } from 'src/app/servicios/auth.service';
+
 @Component({
   selector: 'app-register-form',
   templateUrl: './register-form.component.html',
@@ -22,7 +24,7 @@ export class RegisterFormComponent implements OnInit {
     fechaNac: '',
   };
 
-  constructor() { }
+  constructor(public authService: AuthService) { }
 
   ngOnInit(): void {}
 

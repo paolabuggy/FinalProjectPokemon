@@ -3,7 +3,6 @@
   Registrar
 </button>
 
-
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
@@ -17,13 +16,15 @@
         <div class="col-xs-1" align="center">
           <br />
           <div class="formh5">
-            <h5>Nombre</h5>
-            <input id="nombref" type="text" />
+            <h5>Nombre Completo</h5>
+            <input id="nombref" type="text" #nombreC required/>
           </div>
+          <!--
           <div class="formh5">
             <h5>Apellido</h5>
-            <input id="apellidof" type="text" />
+            <input id="apellidof" type="text" #apellido required/>
           </div>
+          
           <div class="d-flex  justify-content-center">
             <div class="formh5">
               <h5>Sexo</h5>
@@ -46,30 +47,28 @@
                 max="2999-12-31"
               />
             </div>
-          </div>
+          </div> -->
           <div class="formh5">
             <h5>Username</h5>
-            <input id="unamef" type="text" />
+            <input id="unamef" type="text" #userName required/>
           </div>
           <div class="formh5">
             <h5>Password</h5>
-            <input id="passwordf" type="text" />
+            <input id="passwordf" type="text" #userPwd required/>
           </div>
           <div class="formh5">
             <h5>Email</h5>
-            <input id="emailf" type="text" />
+            <input id="emailf" type="text" #userEmail required/>
           </div>
           <br>
           
-         
-        
         <!-- REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER-->
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
           Salir
         </button>
-        <button (click)="guardaUsuario()" type="button" class="btn btn-primary">
+        <button (click)="authService.SignUp(userName.value, userEmail.value, userPwd.value, nombreC.value)" type="button" class="btn btn-primary">
           Guardar Usuario
         </button>
       </div>
