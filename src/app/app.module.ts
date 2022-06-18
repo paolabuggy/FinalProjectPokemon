@@ -26,8 +26,14 @@ import { SearchPokeFormComponent } from './ModalForms/search-poke-form/search-po
 import { SearchUserFormComponent } from './ModalForms/search-user-form/search-user-form.component';
 import { PokeGraphsComponent } from './Graficas/poke-graphs/poke-graphs.component';
 import { LoginPageComponent } from './login-page/login-page.component';
+
 // Auth service
 import { AuthService } from './servicios/auth.service';
+
+import { FormsModule } from '@angular/forms';
+//import { EnvioCorreoService } from './envio-correo.service';
+import { HttpClientModule } from '@angular/common/http';
+
 firebase.initializeApp(environment.firebaseConfig);
 
 @NgModule({
@@ -45,8 +51,7 @@ firebase.initializeApp(environment.firebaseConfig);
     SearchPokeFormComponent,
     SearchUserFormComponent,
     PokeGraphsComponent,
-    LoginPageComponent,
-
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +60,9 @@ firebase.initializeApp(environment.firebaseConfig);
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
