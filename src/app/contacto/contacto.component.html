@@ -1,39 +1,31 @@
 <div class="container">
-  <h1 class="brand"><span>Poke</span> poke poke</h1>
+  <h1 class="brand"><span>Poke</span>mon Unite</h1>
   <div class="wrapper animated bounceInLeft">
     <div class="company-info">
-      <h3>poke poke</h3>
-      <pre>
-        <p>mensaje: </p>
-        {{objuser.name}}
-      </pre>
-      <ul>
-        <li><i class="fa fa-road"></i> </li>
-        <li><i class="fa fa-phone"></i> </li>
-        <li><i class="fa fa-envelope"></i> </li>
-      </ul>
+      <h3>Comparte con nosotros tus comentarios, dudas y sugerencias!</h3>
+      <img class="bola" src="../../assets/img/wigglypuff.png" alt="">
     </div>
     <div class="contact">
-      <h3>Contactanos</h3>
+      <h3>Contáctanos</h3>
       <form #useForm="ngForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
-          <label>Name</label>
+          <label>Nombre</label>
           <input type="text" name="name" [(ngModel)]="objuser.name">
         </div>
         <div class="form-group">
-          <label>Last name</label>
+          <label>Apellido</label>
           <input type="text" name="lastname" [(ngModel)]="objuser.lastname">
         </div>
         <div class="form-group">
-          <label>Email Address</label>
+          <label>Correo Electronico</label>
           <input type="email" name="email" [(ngModel)]="objuser.email">
         </div>
         <div class="form-group">
-          <label>Phone Number</label>
+          <label>Numero telefonico</label>
           <input type="text" name="phone" [(ngModel)]="objuser.phone">
         </div>
         <div class="full form-group">
-          <label>Message</label>
+          <label>Mensaje</label>
           <textarea name="message" rows="5" [(ngModel)]="objuser.message"></textarea>
         </div>
         <div class="full">

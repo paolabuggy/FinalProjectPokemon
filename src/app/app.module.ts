@@ -31,7 +31,6 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { AuthService } from './servicios/auth.service';
 
 import { FormsModule } from '@angular/forms';
-//import { EnvioCorreoService } from './envio-correo.service';
 import { HttpClientModule } from '@angular/common/http';
 
 firebase.initializeApp(environment.firebaseConfig);
