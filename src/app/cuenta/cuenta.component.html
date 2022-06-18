@@ -25,22 +25,22 @@
         </div>
         
     </div>
-
-    <ng-template #contenidoAdmin>
-        <div class="ModoAdmin">
+    <div class="ModoAdmin">
+        <br>
+        <h5>Herramientas de administrador</h5>
+        <section>
+            <div class="d-flex justify-content-around">
+                <app-pokemon-form></app-pokemon-form>
+                <app-search-poke-form></app-search-poke-form>
+                <app-search-user-form></app-search-user-form>
+               
+                
+            </div>
             <br>
-            <h5>Herramientas de administrador</h5>
-            <section>
-                <div class="d-flex justify-content-around">
-                    <app-pokemon-form></app-pokemon-form>
-                    <app-search-poke-form></app-search-poke-form>
-                    <app-search-user-form></app-search-user-form>
-                   
-                    
-                </div>
-                <br>
-            </section>
-        </div>
+        </section>
+    </div>
+    <ng-template #contenidoAdmin>
+        
         
        
     </ng-template>
