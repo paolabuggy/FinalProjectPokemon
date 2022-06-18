@@ -28,5 +28,11 @@ export class ContactoComponent implements OnInit {
   	},(error) => {
   		console.log('error during post is ', error)
   	})
+    this.objuser.name = "";
+    this.objuser.lastname = "";
+    this.objuser.email = "";
+    this.objuser.phone = "";
+    this.objuser.message = "El mensaje ha sido enviado, gracias por comunicarse con nosotros!";
+    this.objuser.address ="";
   }
 }
