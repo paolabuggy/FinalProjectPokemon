@@ -20,6 +20,7 @@ const routes: Routes = [
   {path: 'login' , component: LoginPageComponent},
   {path: 'graphs',component:PokeGraphsComponent},
   {path: 'pokemonPage/:nombre',component:PokemonPageComponent},
+  {path: '**', pathMatch: 'full', redirectTo: 'home'}
 ];
 
 @NgModule({
