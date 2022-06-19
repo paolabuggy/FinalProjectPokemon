@@ -33,6 +33,7 @@ import { AuthService } from './servicios/auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { PokemonPageComponent } from './pokemon-page/pokemon-page.component';
+import { PokemonSoloPageComponent } from './pokemon-solo-page/pokemon-solo-page.component';
 
 //Codigo QR
 import { QRCodeModule } from 'angularx-qrcode';
@@ -56,7 +57,8 @@ firebase.initializeApp(environment.firebaseConfig);
     SearchUserFormComponent,
     PokeGraphsComponent,
     LoginPageComponent,
-    PokemonPageComponent
+    PokemonPageComponent,
+    PokemonSoloPageComponent
   ],
   imports: [
     BrowserModule,
