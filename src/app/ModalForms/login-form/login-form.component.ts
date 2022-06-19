@@ -9,7 +9,7 @@ import { AuthService } from 'src/app/servicios/auth.service';
 export class LoginFormComponent implements OnInit {
   public Uname: string = '';
   public Password:string='';
-  
+  public Metodo:boolean=true;
   constructor(public authService: AuthService) { }
 
   ngOnInit(): void {
@@ -21,6 +21,24 @@ export class LoginFormComponent implements OnInit {
     this.Password = (<HTMLInputElement>document.getElementById('Passwordf')).value;
 
     alert(this.Password);
+  }
+
+  verifyLoginCode(){
+
+  }
+
+  sendLoginCode(){
+
+  }
+
+
+  MetodoLogin(){
+    if(this.Metodo==true){
+      this.Metodo=false;
+    }
+    else{
+      this.Metodo=true;
+    }
   }
 
 }

@@ -16,6 +16,7 @@ export class ContactoComponent implements OnInit {
     message: "",
     address: ""
   }
+  nombre: string='holaholahola';
 
   constructor(private envioCorreo: EnvioCorreoService) { }
 

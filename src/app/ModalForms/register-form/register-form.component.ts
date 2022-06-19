@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../../models/usuario';
 import { AuthService } from 'src/app/servicios/auth.service';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormControl, Validators } from '@angular/forms';
 
 
 @Component({
@@ -27,12 +27,12 @@ export class RegisterFormComponent implements OnInit {
 
   resultado!: string;
 
-  formularioContacto = new FormGroup({
-    nombre: new FormControl('', Validators.required),
-    userName: new FormControl('', [Validators.required, Validators.maxLength(10)]),
-    mail: new FormControl('', [Validators.required, Validators.email]),
-    passwordf1: new FormControl('', [Validators.required, Validators.minLength(6)]),
-    passwordf2: new FormControl('', [Validators.required, Validators.minLength(6)])
+  formularioContacto = new UntypedFormGroup({
+    nombre: new UntypedFormControl('', Validators.required),
+    userName: new UntypedFormControl('', [Validators.required, Validators.maxLength(10)]),
+    mail: new UntypedFormControl('', [Validators.required, Validators.email]),
+    passwordf1: new UntypedFormControl('', [Validators.required, Validators.minLength(6)]),
+    passwordf2: new UntypedFormControl('', [Validators.required, Validators.minLength(6)])
   }
   );
 
