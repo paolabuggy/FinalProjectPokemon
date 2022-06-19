@@ -42,7 +42,7 @@ public pokemones: any = [];
           if (element.data.nombre==nompoke){
             
             
-            this.router.navigate(['/pokemonPage',element.data.nombre, element.data.foto]).then(() => {
+            this.router.navigate(['/pokemonPage',element.data.nombre]).then(() => {
               window.location.reload();
             });
           
