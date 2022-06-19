@@ -18,28 +18,29 @@
           <!-- LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN-->
           <div class="col-xs-1" align="center">
             <div *ngIf="Metodo==false">
-                  <!--[hidden]="user"-->
-                    <h5>Log In con Firebase Authentication MSG</h5>
+                    <h5>Iniciar sesión con número de celular</h5>
                     <button  (click)="MetodoLogin()" type="button" class="btn btn-warning" data-dismiss="modal">
-                      Web Login
+                      Login con email
                    </button>
                     <div class="container">
                         <label for="phone" id="lbNum">Número de teléfono</label>
                         <div id="cajaNum">
-                            <input type="text"  id="num" class="input" placeholder="1" maxlength="2">
-                            <input type="text"  id="num" class="input" placeholder="949" maxlength="3">
-                            <input type="text"  id="num" class="input" placeholder="555" maxlength="3">
-                            <input type="text"  id="num" class="input" placeholder="5555" maxlength="4">
+                            <input type="text"  [(ngModel)]="phoneNumber.country"  id="num" class="input" placeholder="52" maxlength="2">
+                            <input type="text"  [(ngModel)]="phoneNumber.area"     id="num" class="input" placeholder="449" maxlength="3">
+                            <input type="text"  [(ngModel)]="phoneNumber.prefix"   id="num" class="input" placeholder="555" maxlength="3">
+                            <input type="text"  [(ngModel)]="phoneNumber.line"     id="num" class="input" placeholder="5555" maxlength="4">
                         </div>
                         <div id="recaptcha-container"></div>
                         <br>
-                        <button (click)="sendLoginCode()" class="btn btn-warning">SMS Text Login Code</button>
+                        <button (click)="sendLoginCode()" class="btn btn-warning">Enviar código de login por SMS</button>
                         <br>
-                        <div *ngIf=""> <!--*ngIf="windowRef.confirmationResult"-->
+                        <div *ngIf="windowRef.confirmationResult"> 
                             <hr>
                             <label for="code" id="lbNum">Ingrese el código de verificación</label>
-                            <input type="text" name="code" id="num" ><!--[(ngModel)]="verificationCode"-->
-                
+                            <input type="text" name="code" id="num" [(ngModel)]="verificationCode">
+                            <div class="formh5 alert alert-warning" role="alert" id="errorDatos" hidden>
+                              {{advice}}
+                            </div>
                             
                             <div class="d-flex justify-content-around">
             
@@ -51,7 +52,7 @@
               
             </div>
             <div *ngIf="Metodo==true">
-                  <div  class="container">
+                  <div class="container">
                     <h5>Email</h5>
                     <input id="Unamef" type="text" #userEmail required/>
                     <br>
@@ -64,7 +65,7 @@
                   <br>
                   <div class="d-flex justify-content-around">
                     <button  (click)="MetodoLogin()" type="button" class="btn btn-warning" data-dismiss="modal">
-                      SMS
+                      Login por SMS
                    </button>
                     <button  (click)="authService.SignIn(userEmail.value, userPwd.value)" type="button" class="btn btn-warning" data-dismiss="modal">
                         Ingresar
@@ -75,7 +76,6 @@
               </div>
             </div>
             
-
           <!-- LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN-->
         </div>
         <div class="modal-footer">

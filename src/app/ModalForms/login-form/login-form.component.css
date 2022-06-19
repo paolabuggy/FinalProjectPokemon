@@ -62,3 +62,18 @@
     width: 500px !important;
   }
   
+  #num {
+    margin: 10px;
+    width: 90px;
+  }
+  
+  #cajaNum {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  #recaptcha-container{
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
