@@ -15,9 +15,11 @@
 }
 
 .pokecards {
+    width: 100%;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
-    flex-direction: row;
 }
 
 .carta {
@@ -90,3 +92,33 @@
 .carta:hover {
     transform: scale(1.15);
 }
+
+/* RESPONSIVE */
+@media(min-width:1000px) {
+    .displayfiltros{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+  }
+  
+  @media(max-width:1000px){
+    .filtro{
+      width: 130px;
+    }
+    .container{
+        width: 100%;
+    }
+    .menutipos{
+        width: 100%;
+    }
+    .displayfiltros{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+  }

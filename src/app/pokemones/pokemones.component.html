@@ -1,33 +1,37 @@
-<div class="menutipos">
-    <ul class="displayfiltros">
-      <li class="lifiltro">
+<div class="container">
+  <div class="menutipos">
+    <div class="displayfiltros">
+      <div class="lifiltro">
         <button class="filtro" (click)="filtro('all')">Todos los roles</button>
-      </li>
-      <li class="lifiltro">
+      </div>
+      <div class="lifiltro">
         <button class="filtro" (click)="filtro('Ofensivo')">Ofensivo</button>
-      </li>
-      <li class="lifiltro">
+      </div>
+      <div class="lifiltro">
         <button class="filtro" (click)="filtro('Defensivo')">Defensivo</button>
-      </li>
-      <li class="lifiltro">
+      </div>
+      <div class="lifiltro">
         <button class="filtro" (click)="filtro('Apoyo')">Apoyo</button>
-      </li>
-      <li class="lifiltro">
+      </div>
+      <div class="lifiltro">
         <button class="filtro" (click)="filtro('Agil')">Agil</button>
-      </li>
-      <li class="lifiltro">
+      </div>
+      <div class="lifiltro">
         <button class="filtro" (click)="filtro('Equilibrado')">Equilibrado</button>
-      </li>
-    </ul>
-</div>
-
-<div class="pokecards">
-  <div  class="card carta show" *ngFor="let poke of pokemones" id={{poke.data.tipo}}>
-    <div class="foto">
-      <a [routerLink]="['/pokemonPage', poke.data.nombre]" > <img src={{poke.data.foto}} class="card-img-top imgcard" alt="..."></a>
-    </div>
-    <div class="card-body">
-      <p class="card-text cardtexto">{{poke.data.nombre}}</p>
+      </div>
     </div>
   </div>
+
+  <div class="pokecards">
+    <div class="card carta show" *ngFor="let poke of pokemones" id={{poke.data.tipo}}>
+      <div class="foto">
+        <a [routerLink]="['/pokemonPage', poke.data.nombre]"> <img src={{poke.data.foto}} class="card-img-top imgcard"
+            alt="..."></a>
+      </div>
+      <div class="card-body">
+        <p class="card-text cardtexto">{{poke.data.nombre}}</p>
+      </div>
+    </div>
+  </div>
+
 </div>
