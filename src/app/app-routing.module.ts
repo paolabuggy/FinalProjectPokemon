@@ -19,7 +19,7 @@ const routes: Routes = [
   {path: 'pokemon', component: PokemonesComponent},
   {path: 'login' , component: LoginPageComponent},
   {path: 'graphs',component:PokeGraphsComponent},
-  {path: 'pokemonPage/:nombre',component:PokemonPageComponent},
+  {path: 'pokemonPage/:nombre/:foto',component:PokemonPageComponent},
 ];
 
 @NgModule({

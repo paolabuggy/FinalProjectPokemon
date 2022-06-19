@@ -24,7 +24,7 @@
 <div class="pokecards">
   <div  class="card carta show" *ngFor="let poke of pokemones" id={{poke.data.tipo}}>
     <div class="foto">
-      <a [routerLink]="['/pokemonPage', poke.data.nombre]" > <img src={{poke.data.foto}} class="card-img-top imgcard" alt="..."></a>
+      <a [routerLink]="['/pokemonPage', poke.data.nombre, poke.data.foto]" > <img src={{poke.data.foto}} class="card-img-top imgcard" alt="..."></a>
     </div>
     <div class="card-body">
       <p class="card-text cardtexto">{{poke.data.nombre}}</p>
