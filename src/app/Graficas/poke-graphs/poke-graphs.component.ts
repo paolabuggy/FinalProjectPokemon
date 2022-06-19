@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FirestoreService } from '../../servicios/firestore.service';
 declare var google:any;
 
 @Component({
@@ -8,7 +9,11 @@ declare var google:any;
 })
 export class PokeGraphsComponent implements OnInit {
   tipo:boolean=true;
-  constructor() { }
+  public pokemones: any = [];
+
+  constructor(private firestoreService: FirestoreService) { }
+  
+  
   CambiaGrafica(){
     google.charts.load("current", {packages:['corechart']});
     google.charts.setOnLoadCallback(drawChart);
@@ -68,6 +73,16 @@ export class PokeGraphsComponent implements OnInit {
 
 
     ngOnInit(): void {
+      this.firestoreService.getPokemones().subscribe((pokemonesSnapshot) => {
+        this.pokemones = [];
+        pokemonesSnapshot.forEach((pokemonData: any) => {
+          this.pokemones.push({
+            id: pokemonData.payload.doc.id,
+            data: pokemonData.payload.doc.data()
+          });
+        });
+      });
+
       //Grafica vertical
       
      var tipografica=this.tipo;

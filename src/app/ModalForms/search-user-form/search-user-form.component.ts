@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-user-form.component.css']
 })
 export class SearchUserFormComponent implements OnInit {
+  public UsuarioEncontrado:boolean=true;
+ 
   public Uid:number=0;
   public Unombre:string='';
   public buscId:boolean=false;
@@ -42,6 +44,10 @@ export class SearchUserFormComponent implements OnInit {
     let busq:string="";
     busq=(<HTMLInputElement>document.getElementById('Unamef')).value;
     alert(busq);
+  }
+
+  Eliminar(){
+
   }
 
 }
