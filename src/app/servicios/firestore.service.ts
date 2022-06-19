@@ -22,6 +22,16 @@ export class FirestoreService {
     return this.firestore.collection('pokemones');
   }
 
+  //Obtiene todos los usuarios
+  public getUsuarios(){
+    return this.firestore.collection('users').snapshotChanges();
+  }
+
+  //Obtiene 1 usuario por su id
+  public getUsuario(documentId: string) {
+    return this.firestore.collection('users').doc(documentId).snapshotChanges();
+  }
+
   //Crea un nuevo pokemon
   public createPokemon(
     data: { 

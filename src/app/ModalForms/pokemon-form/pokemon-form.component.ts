@@ -9,7 +9,7 @@ import { FirestoreService } from '../../servicios/firestore.service';
 })
 export class PokemonFormComponent implements OnInit {
 
-  public Pnombre:string='';
+  public Pnombre: string = '';
   public Purl: string = '';
   public Patq: number = 0;
   public Pspa: number = 0;
@@ -18,6 +18,9 @@ export class PokemonFormComponent implements OnInit {
   public Ptip: string = '';
 
   public advice = "";
+  public pokemones: any = [];
+  public existente: boolean = false;
+
 
   public newPokemonForm = new FormGroup({
     nombre: new FormControl('', Validators.required),
@@ -45,13 +48,31 @@ export class PokemonFormComponent implements OnInit {
       defensa: '',
       velocidad: ''
     });
-    
-    this.advice="";
-    (<HTMLInputElement>document.getElementById('aviso')).hidden=true;
+
+    this.advice = "";
+    (<HTMLInputElement>document.getElementById('aviso')).hidden = true;
+
+    this.firestoreService.getPokemones().subscribe((pokemonesSnapshot) => {
+      this.pokemones = [];
+      pokemonesSnapshot.forEach((pokemonData: any) => {
+        this.pokemones.push({
+          id: pokemonData.payload.doc.id,
+          data: pokemonData.payload.doc.data()
+        });
+      });
+    });
 
   }
 
-  public newPokemon(form:any) {
+  public newPokemon(form: any) {
+    for (let pokemon of this.pokemones) {
+      this.Pnombre = "";
+      this.Pnombre = pokemon.data.nombre;
+      if (this.Pnombre == form.nombre) {
+        this.existente = true;
+      }
+    }
+    if (this.existente != true) {
       let data = {
         nombre: form.nombre,
         tipo: form.tipo,
@@ -62,10 +83,11 @@ export class PokemonFormComponent implements OnInit {
         defensa: form.defensa,
         velocidad: form.velocidad
       }
+
       this.firestoreService.createPokemon(data).then(() => {
-      this.advice="Pokemón registrado exitosamente!";
-      (<HTMLInputElement>document.getElementById('aviso')).hidden=false;
-      (<HTMLInputElement>document.getElementById('aviso')).value= this.advice;
+        this.advice = "Pokemón registrado exitosamente!";
+        (<HTMLInputElement>document.getElementById('aviso')).hidden = false;
+        (<HTMLInputElement>document.getElementById('aviso')).value = this.advice;
         console.log('Documento creado exitosamente!');
         this.newPokemonForm.setValue({
           id: '',
@@ -79,10 +101,18 @@ export class PokemonFormComponent implements OnInit {
           velocidad: ''
         });
         setTimeout(() => window.location.reload(), 3000);
-        
+
       }, (error) => {
         console.error(error);
       });
+    } else {
+      this.advice = "Ya existe un pokemon con ese nombre";
+      (<HTMLInputElement>document.getElementById('aviso')).hidden = false;
+      (<HTMLInputElement>document.getElementById('aviso')).value = this.advice;
+      setTimeout(() => window.location.reload(), 3000);
+      this.existente=false;
+    }
+
   }
 
 }

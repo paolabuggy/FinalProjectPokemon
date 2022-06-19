@@ -11,7 +11,6 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <!-- REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER-->
         <div class="col-xs-1" align="center">
 
           <div class="d-flex  justify-content-evenly">
@@ -19,12 +18,10 @@
               ID
             </button>
             <button (click)="SeleccionarMetodo(2)" type="button" class="btn btn-secondary" data-dismiss="modal">
-              Nombre
+              Nombre Usuario
             </button>
-
           </div>
           <br>
-
           <div *ngIf="buscId" class="container">
             <h5>Ingresa id</h5>
             <input id="idf" type="text" />
@@ -46,18 +43,26 @@
             <br>
           </div>
           
-
-          <div *ngIf="UsuarioEncontrado==true"> <!--*ngIf="UsuarioEncontrado==true"-->
+          <div *ngIf="UsuarioEncontrado==true && buscId==true">
             <br>
-            <h6>Se encontro el siguiente usuario</h6>
+            <h6>Se encontró el siguiente usuario</h6>
             <p>{{Unombre}}</p>
+            <p>{{Uusername}}</p>
+            <p>{{Uemail}}</p>
             <p>{{Uid}}</p>
-            
           </div>
 
+          <div *ngIf="UsuarioEncontrado==true && buscName==true">
+            <br>
+            <h6>Se encontró el siguiente usuario</h6>
+            <div *ngFor="let user of resultados">
+              <p>{{user.Unombre}}</p>
+              <p>{{user.Uusername}}</p>
+              <p>{{user.Uemail}}</p>
+              <p>{{user.Uid}}</p>
+            </div>
+          </div>
 
-
-          <!-- REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER-->
         </div>
         <br>
         <div class="modal-footer">
