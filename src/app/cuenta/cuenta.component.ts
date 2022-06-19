@@ -15,6 +15,9 @@ export class CuentaComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  RecibirDatos(dato:string){
+      alert(dato);
+  }
 
 
 }

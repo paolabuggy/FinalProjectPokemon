@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,Input, Output, EventEmitter} from '@angular/core';
 import { Pokemon } from '../../models/pokemon';
 import { FirestoreService } from 'src/app/servicios/firestore.service';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+
+
+
 
 @Component({
   selector: 'app-search-poke-form',
@@ -9,6 +12,11 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
   styleUrls: ['./search-poke-form.component.css']
 })
 export class SearchPokeFormComponent implements OnInit {
+  @Input() Datos:string="";
+  //AQUI DECIDES EL TIPO DE DATO QUE LE VAS A PASAR <string>
+  @Output() PasarDatos=new EventEmitter<string>();
+  
+  
   public ArrUsuarios: Pokemon[] = [];
   public Pid: string = '';
   public Pnombre: string = '';
@@ -41,6 +49,12 @@ export class SearchPokeFormComponent implements OnInit {
         });
       });
     });
+  }
+
+  //MEDIANTE EL EMIT PASAS COMO PARAMETRO LA INFO A PASAR AL 
+  //HTML DE CUENTA.HTML
+  PasarInfo(){
+    this.PasarDatos.emit("Estos datos ya estan siendo alertados en un metodo fuera del modal ");
   }
 
   SeleccionarMetodo(opc: number) {
@@ -246,6 +260,7 @@ export class SearchPokeFormComponent implements OnInit {
 
     }
   }
+  
 
 
 

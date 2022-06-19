@@ -45,6 +45,7 @@ export class LoginFormComponent implements OnInit {
     this.windowRef.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
     this.windowRef.recaptchaVerifier.render();
   }
+  
 
   sendLoginCode() {
     const appVerifier = this.windowRef.recaptchaVerifier;
