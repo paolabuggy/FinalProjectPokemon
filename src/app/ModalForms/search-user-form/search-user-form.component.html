@@ -45,11 +45,21 @@
             </button>
             <br>
           </div>
+          
+
+          <div *ngIf="UsuarioEncontrado==true"> <!--*ngIf="UsuarioEncontrado==true"-->
+            <br>
+            <h6>Se encontro el siguiente usuario</h6>
+            <p>{{Unombre}}</p>
+            <p>{{Uid}}</p>
+            
+          </div>
 
 
 
           <!-- REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER-->
         </div>
+        <br>
         <div class="modal-footer">
 
         </div>
