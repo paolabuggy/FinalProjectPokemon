@@ -1,5 +1,3 @@
-
-
 <div class="container accmenu">
     <div class="container" *ngIf="authService.userData.displayName!='admin'; else contenidoAdmin">
         
@@ -18,13 +16,16 @@
                             <p>User ID: <br><strong>{{user.uid}}</strong></p>
                             <p>Nombre Completo: <br><strong>{{user.photoURL}}</strong></p>
                             <p>Correo: <br><strong>{{user.email}}</strong></p>
-                            <qrcode [qrdata]="user.displayName" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+                            <h4>Guarda tus datos escaneando el código!</h4>
+                            <qrcode [qrdata]="
+                            'Nombre: '+user.displayName+
+                            '\nUID: '+user.uid+
+                            '\nEmail: '+user.email" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
     </div>
     
     <div class="ModoAdmin">
@@ -35,8 +36,6 @@
                 <app-pokemon-form></app-pokemon-form>
                 <app-search-poke-form></app-search-poke-form>
                 <app-search-user-form></app-search-user-form>
-               
-                
             </div>
             <br>
         </section>
@@ -45,10 +44,7 @@
             <app-pokemon-solo-page></app-pokemon-solo-page>
         </div>
         <div *ngIf="EncontradoUser==true"><!--Si llega a encontrar el usuario, esto se debe poner en true-->
-            
         </div>
-        
-       
     </div>
     <ng-template #contenidoAdmin>
         
