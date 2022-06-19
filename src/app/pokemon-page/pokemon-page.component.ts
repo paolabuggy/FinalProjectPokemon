@@ -23,7 +23,19 @@ export class PokemonPageComponent implements OnInit {
     this.info = this.rutaActiva.snapshot.paramMap.get('info');
   }
 
+  
 
+  habla(){
+    speechSynthesis.cancel();
+    let speech = new SpeechSynthesisUtterance(this.info);
+    speechSynthesis.speak(speech);
+  }
+  pausa(){
+    speechSynthesis.pause();
+  }
+  resumir(){
+    speechSynthesis.resume();
+  }
 
 
 }
