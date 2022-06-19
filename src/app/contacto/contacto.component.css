@@ -24,6 +24,8 @@ ul {
 
 .brand {
   text-align: center;
+  color: pink;
+  text-shadow: 2px 2px 3px black;
 }
 
 .brand span {
@@ -94,7 +96,7 @@ ul {
 }
 
 /* RESPONSIVE */
-@media(min-width:700px) {
+@media(min-width:1000px) {
   .wrapper {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -107,7 +109,7 @@ ul {
   .company-info h3,
   .company-info ul,
   .brand {
-    text-align: left;
+    text-align: justify;
   }
 
   .bola{
@@ -115,8 +117,18 @@ ul {
   }
 }
 
-@media(max-width:1200px){
+@media(max-width:1000px){
   .bola{
     width: 130px;
+  }
+  .company-info h3,
+  .company-info ul,
+  .brand {
+    text-align: center;
+  }
+  .company-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
