@@ -97,9 +97,11 @@
 }
 
 .infSuperior{
-    padding-top: 20px;
+    padding-top: 40px;
     display: flex;
     justify-content: space-around;
+    padding-left: 90px;
+    padding-right: 90px;
 }
 .contactos{
     width: 400px;
@@ -281,6 +283,8 @@
 .registrosDatos p{
     text-align: center;
     font-size: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 img {
     display: block;
@@ -297,4 +301,61 @@ img {
     width: 60%;
     height: 60%;
     align-self: center;
+}
+
+@media screen and (max-width: 1200PX) {
+    .infSuperior{
+        flex-direction: column;
+        align-self:flex-end;
+    }
+    .infoUnite, .contactos, .etiquetas, .derechas, .noticias{
+        align-self: center;
+        text-align: center;
+    }  
+}
+
+@media screen and (max-width: 800PX) {
+    .registrosLegales{
+        flex-direction: column;
+        align-self:flex-end;
+        align-self: center;
+    } 
+    .tarjetaroster{
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .roster{
+        flex-direction: column;
+    }
+    .tarjetaroster{
+        border-radius: 24px 0px 0px 0px;
+        margin-bottom: 0px;
+        transform: translateX(0.1px);
+    }
+    .textoroster{
+        width: 80%;
+        align-self: center;
+    }
+    .arriba{ 
+        border-radius: 20px 0px 0px 0px; 
+    }
+    .carrusel{
+        align-self: center;
+    } 
+}
+
+@media screen and (max-width: 400px) {
+    .redes{
+        flex-direction: column;
+        padding-top: -20px;
+    }
+    .redes a{
+        margin-top: 20px;
+        align-self: center;
+    }
+    .reres{
+        transform: scale(0.7)
+    }
 }
