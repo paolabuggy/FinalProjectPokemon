@@ -34,6 +34,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { PokemonPageComponent } from './pokemon-page/pokemon-page.component';
 
+//Codigo QR
+import { QRCodeModule } from 'angularx-qrcode';
+import { ServiceWorkerModule } from '@angular/service-worker';
+
 firebase.initializeApp(environment.firebaseConfig);
 
 @NgModule({
@@ -64,7 +68,14 @@ firebase.initializeApp(environment.firebaseConfig);
     AngularFireDatabaseModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    QRCodeModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
