@@ -39,8 +39,8 @@
             </ul>
         </div>
         <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Buscar Pokemon" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Buscar</button>
+            <input class="form-control me-2" type="search" placeholder="Buscar Pokemon" aria-label="Search"  #buscarTexto>
+            <button class="btn btn-outline-success"  (click)="buscarUnPoke(buscarTexto.value)" type="submit" >Buscar</button>
         </form>
     </div>
 </nav>
