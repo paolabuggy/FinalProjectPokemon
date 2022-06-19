@@ -40,7 +40,14 @@
             <br>
         </section>
         <br>
-        <app-pokemon-solo-page></app-pokemon-solo-page>
+        <div *ngIf="EncontradoPoke==true"><!--Si llega a encontrar el pokemon, esto se debe poner en true-->
+            <app-pokemon-solo-page></app-pokemon-solo-page>
+        </div>
+        <div *ngIf="EncontradoUser==true"><!--Si llega a encontrar el usuario, esto se debe poner en true-->
+            
+        </div>
+        
+       
     </div>
     <ng-template #contenidoAdmin>
         

@@ -8,9 +8,13 @@ import { AuthService } from '../servicios/auth.service';
 })
 export class CuentaComponent implements OnInit {
 
+  public EncontradoPoke:boolean=true;
+  public EncontradoUser:boolean=true;
   constructor(public authService: AuthService) { }
 
   ngOnInit(): void {
   }
+
+
 
 }

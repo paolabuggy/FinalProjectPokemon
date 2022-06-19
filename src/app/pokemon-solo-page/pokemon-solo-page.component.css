@@ -1,0 +1,18 @@
+img{
+    height: 250px;
+    border: 5px solid rgb(199, 147, 242);
+    border-radius: 5px;
+    background-color: rgb(247, 242, 252);
+    box-shadow: 2px 2px  rgb(130, 27, 171);
+    padding:5px;
+}
+
+.pokeform{
+    align-items: center;
+    text-align: center;
+}
+
+.pokeform .inputs, select{
+ width: 400px;
+ margin-left: 31%;
+}
