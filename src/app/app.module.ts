@@ -38,6 +38,7 @@ import { PokemonSoloPageComponent } from './pokemon-solo-page/pokemon-solo-page.
 //Codigo QR
 import { QRCodeModule } from 'angularx-qrcode';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { SMSLoginComponent } from './smslogin/smslogin.component';
 
 firebase.initializeApp(environment.firebaseConfig);
 
@@ -58,7 +59,8 @@ firebase.initializeApp(environment.firebaseConfig);
     PokeGraphsComponent,
     LoginPageComponent,
     PokemonPageComponent,
-    PokemonSoloPageComponent
+    PokemonSoloPageComponent,
+    SMSLoginComponent
   ],
   imports: [
     BrowserModule,
