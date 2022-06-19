@@ -41,8 +41,10 @@ export class AuthService {
       .signInWithEmailAndPassword(email, password)
       .then((result) => {
         this.ngZone.run(() => {
-          this.router.navigate(['pokemon']);
           localStorage.setItem('failLogin', '');
+          this.router.navigate(['/home']).then(() => {
+            window.location.reload();
+          });
         });
         this.SetUserData(result.user);
       })

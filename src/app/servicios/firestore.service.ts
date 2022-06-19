@@ -18,6 +18,10 @@ export class FirestoreService {
     return this.firestore.collection('pokemones').doc(documentId).snapshotChanges();
   }
 
+  public getColeccion(){
+    return this.firestore.collection('pokemones');
+  }
+
   //Crea un nuevo pokemon
   public createPokemon(data: {nombre: string, tipo: string, foto: string}) {
     return this.firestore.collection('pokemones').add(data);
