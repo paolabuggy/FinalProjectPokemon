@@ -18,6 +18,7 @@
                             <p>User ID: <br><strong>{{user.uid}}</strong></p>
                             <p>Nombre Completo: <br><strong>{{user.photoURL}}</strong></p>
                             <p>Correo: <br><strong>{{user.email}}</strong></p>
+                            <qrcode [qrdata]="user.displayName" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
                         </div>
                     </div>
                 </div>
