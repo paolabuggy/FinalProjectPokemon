@@ -221,7 +221,7 @@ img {
     }
 }
 
-@media(max-width:700px) {
+@media(min-width:200px) {
     li,
     p,
     h2 {
