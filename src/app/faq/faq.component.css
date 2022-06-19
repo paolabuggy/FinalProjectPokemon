@@ -197,7 +197,7 @@ img {
     }
 }
 
-@media(max-width:700px) {
+@media(max-width:1000px) {
     li,
     p,
     h2 {
@@ -221,7 +221,7 @@ img {
     }
 }
 
-@media(min-width:200px) {
+@media(max-width:800px) {
     li,
     p,
     h2 {
