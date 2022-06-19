@@ -1,14 +1,15 @@
-.headerimg{
-    height: 600px;
-    background-image: url("../../assets/img/PokemonallBackground.jpg");
-    margin-left: -11%;
-    margin-right: -11%;
-    margin-top: -3%;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items:flex-end;
-}
+    .headerimg{
+        height: 600px;
+        background-image: url("../../assets/img/PokemonallBackground.jpg");
+        margin-left: -11%;
+        margin-right: -11%;
+        margin-top: -3%;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items:flex-end;
+        
+    }
 .textoheader{
     margin-bottom: 50px;
 
@@ -356,6 +357,37 @@ img {
         align-self: center;
     }
     .reres{
-        transform: scale(0.7)
+        transform: scale(0.6)
+    }
+    .textoheader, .tituloheader,.cuerpoheader{
+        transform: scale(0.6)
+    }
+    .equipobotones,.botonequipor{
+        transform: scale(0.6)
+    }
+    .infoUnite,.etiquetas,.contactos{
+        width: 200px;
+    }
+}
+
+
+@media screen and (max-width: 1550PX) {
+    .headerimg{
+        height: 500px;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        
+    }
+    .equipo{
+        height: 500px;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+    }
+    .infoHome{
+        background-color: darkmagenta;
+        margin-left: 0;
+        margin-right: 0;
     }
 }
