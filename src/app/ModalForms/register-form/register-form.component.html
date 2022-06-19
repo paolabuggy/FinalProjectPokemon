@@ -78,11 +78,11 @@
                 <span *ngIf="this.formularioContacto.get('passwordf2')?.errors?.['minlength']">
                   (Debe tener como mínimo 6 caracteres)
                 </span>
-                <span *ngIf="this.formularioContacto.errors?.['passwordCoincide']">
-                  (Las contraseñas no coinciden)
-                </span>
               </p>
               </div>
+            </div>
+            <div class="formh5 alert alert-primary" role="alert" id="errorDatos" hidden>
+              {{advice}}
             </div>
             <button type="submit" class="btn btn-primary">Guardar Usuario</button>
           </form>
