@@ -1,0 +1,9 @@
+/* RESPONSIVE */
+@media(max-width:1000px) {
+    .d-flex {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
