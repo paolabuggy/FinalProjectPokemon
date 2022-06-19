@@ -21,7 +21,8 @@ input {
 #passwordf1,
 #passwordf2,
 #emailf, 
-#nombrecompletof {
+#nombrecompletof,
+alert {
   width: 300px;
 }
 

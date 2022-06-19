@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class AuthService {
   userData: any; // Guarda los datos del usuario que inició sesión
   usuario: any;
+  aviso: string = "";
 
   constructor(
     public afs: AngularFirestore, // Inyecta Firestore service
@@ -41,24 +42,23 @@ export class AuthService {
       .then((result) => {
         this.ngZone.run(() => {
           this.router.navigate(['pokemon']);
-          //window.alert(JSON.stringify(result.user?.displayName));
+          localStorage.setItem('failLogin', '');
         });
         this.SetUserData(result.user);
       })
       .catch((error) => {
-        window.alert(error.message);
+        localStorage.setItem('failLogin', 'Datos incorrectos');
+        console.log(error.message);
       });
   }
 
   // Registrarse con email/password y nombre de usuario
   SignUp(username:string, email: string, password: string, completeName: string) {
-    if((username!="admin" && completeName!="Administrador") && username!="admin" && completeName!="Administrador"){
       return this.afAuth
       .createUserWithEmailAndPassword(email, password)
       .then((result) => {
           //Cuando es nuevo usuario, se llama a setUserData
           //para el registro y devuelve la promesa
-          window.alert("Usuario creado exitosamente");
           this.SetUserData(result.user);
           //Cambia el displayName al nombre del usuario
           this.usuario=getAuth();
@@ -66,11 +66,8 @@ export class AuthService {
           this.router.navigate(['home']);
       })
       .catch((error) => {
-        window.alert(error.message);
-      });      
-    }else{
-      return window.alert("No se puede utilizar ese nombre de usuario");
-    }
+        console.log(error.message);
+      });  
   }
 
   /* Configuración de datos de usuario al iniciar sesión con username/password,
