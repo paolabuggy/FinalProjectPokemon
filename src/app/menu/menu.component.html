@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #6523b6;">
     <div class="container-fluid">
         <img src="assets/img/unite-logo.png" height="60" alt="" />
-        <a class="navbar-brand" [routerLink]="['/home']">Pokepoke</a>
+        <a class="navbar-brand" [routerLink]="['/home']">Pokémon Unite</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -39,8 +39,8 @@
             </ul>
         </div>
         <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Buscar Pokemon" aria-label="Search"  #buscarTexto>
-            <button class="btn btn-outline-warning"  (click)="buscarUnPoke(buscarTexto.value)" type="submit" >Buscar</button>
+            <input class="form-control me-2" type="search" placeholder="Buscar Pokémon" aria-label="Search"  #buscarTexto>
+            <button class="btn btn-outline-warning"  (click)="buscarUnPoke(buscarTexto.value)" type="submit">Buscar</button>
         </form>
     </div>
 </nav>
