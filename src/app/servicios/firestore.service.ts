@@ -23,7 +23,17 @@ export class FirestoreService {
   }
 
   //Crea un nuevo pokemon
-  public createPokemon(data: {nombre: string, tipo: string, foto: string}) {
+  public createPokemon(
+    data: { 
+      nombre: string, 
+      tipo: string, 
+      foto: string, 
+      info: string, 
+      ataque: number, 
+      especial: number, 
+      defensa: number, 
+      velocidad: number
+    }) {
     return this.firestore.collection('pokemones').add(data);
   }
 

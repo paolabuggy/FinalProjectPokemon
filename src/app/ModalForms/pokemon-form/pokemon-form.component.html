@@ -1,70 +1,86 @@
 <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#ModalPokemon">
-    Añadir Pokemon
-  </button>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="ModalPokemon" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Registrar Nuevo Pokemon</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <!-- REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER-->
-          <div class="col-xs-1" align="center">
-           
-            <div class="formh5">
-              <h5>Pokemon</h5>
-              <input id="nombref" type="text" />
-            </div>
-           
-           
+  Añadir Pokemon
+</button>
 
-            <div class="d-flex  justify-content-evenly">
-              <div>
-                <h5>Attack</h5>
-                <input type="number" id="atqf" name="points" step="1" min="0" max="100" value="0">
-               </div>
-               <div>
-                <h5>Special</h5>
-                <input type="number" id="spaf" name="points" step="1" min="0" max="100" value="0">
-               </div>
-               <div>
-                <h5>Defense</h5>
-                <input type="number" id="deff" name="points" step="1" min="0" max="100" value="0">
-               </div>
-               <div>
-                <h5>Speed</h5>
-                <input type="number" id="spef" name="points" step="1" min="0" max="100" value="0">
-               </div>
-            </div>
-            <h5>Ingresa tipo del Pokemón</h5>
-            <select id="tipof" class="form-select" aria-label="Default select example">
-                
-                <option value="Ofensivo">Ofensivo</option>
-                <option value="Defensivo">Defensivo</option>
-                <option value="Apoyo">Apoyo</option>
-                <option value="Agil">Agil</option>
-                <option value="Equilibrado">Equilibrado</option>
-              
-              </select>
+<!-- Modal -->
+<div class="modal fade" id="ModalPokemon" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Registrar Nuevo Pokemon</h5>
+        <button type="button" id="cerrar" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER-->
+        <form class="col-xs-1" align="center" (ngSubmit)="newPokemon(newPokemonForm.value)"
+          [formGroup]="newPokemonForm">
+          <input type="hidden" formControlName="id">
 
-            <div class="formh5">
-              <h5>Image</h5>
-              <input id="urlf" type="text" />
-            </div> 
-            <br>
-            <button (click)="RegistraPoke()" type="button" class="btn btn-warning" data-dismiss="modal">
+          <div class="formh5">
+            <h5>Nombre del pokemón</h5>
+            <input class="form-control" formControlName="nombre" id="nombref" type="text" />
+          </div>
+
+          <div class="d-flex  justify-content-evenly">
+            <div>
+              <h5>Attack</h5>
+              <input class="form-control" formControlName="ataque" type="number" id="atqf" name="points" step="1"
+                min="0" max="100" value="0">
+            </div>
+            <div>
+              <h5>Special</h5>
+              <input class="form-control" formControlName="especial" type="number" id="spaf" name="points" step="1"
+                min="0" max="100" value="0">
+            </div>
+            <div>
+              <h5>Defense</h5>
+              <input class="form-control" formControlName="defensa" type="number" id="deff" name="points" step="1"
+                min="0" max="100" value="0">
+            </div>
+            <div>
+              <h5>Speed</h5>
+              <input class="form-control" formControlName="velocidad" type="number" id="spef" name="points" step="1"
+                min="0" max="100" value="0">
+            </div>
+          </div>
+          <h5>Ingresa tipo del Pokemón</h5>
+          <select class="form-control" formControlName="tipo" id="tipof" class="form-select"
+            aria-label="Default select example">
+
+            <option value="Ofensivo">Ofensivo</option>
+            <option value="Defensivo">Defensivo</option>
+            <option value="Apoyo">Apoyo</option>
+            <option value="Agil">Agil</option>
+            <option value="Equilibrado">Equilibrado</option>
+
+          </select>
+
+          <div class="formh5">
+            <h5>Información del Pokemón</h5>
+            <textarea rows="5" cols="70" class="form-control" type="text" formControlName="info" id="infof"></textarea>
+          </div>
+
+          <div class="formh5">
+            <h5>Image</h5>
+            <input class="form-control" type="url" formControlName="foto" id="urlf" />
+          </div>
+          <br>
+          <div class="formh5 alert alert-primary" role="alert" id="aviso" hidden>
+            {{advice}}
+          </div>
+          <br>
+          <!--<button (click)="RegistraPoke()" type="button" class="btn btn-warning" data-dismiss="modal">
                 Registrar
-            </button>     
-            <br>    
-           
+            </button>     -->
+          <input type="submit" id="addBtn" class="btn btn-outline-info" [disabled]="!newPokemonForm.valid"
+            [value]="'Registrar'">
+          <br>
+
           <!-- REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER-->
-        </div>
+        </form>
         <br>
         <div class="modal-footer">
-          
+
         </div>
       </div>
     </div>

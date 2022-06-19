@@ -27,14 +27,14 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <li><a class="dropdown-item" [routerLink]="['/cuenta']">Sesion Actual</a></li>
-                        <li><a class="dropdown-item" [routerLink]="['/login']">Iniciar Sesion</a></li>
+                        <li *ngIf="authService.isLoggedIn !== true"><a class="dropdown-item" [routerLink]="['/login']">Iniciar Sesion</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" [routerLink]="['/graphs']">Gráficas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" (click)="authService.SignOut()">Cerrar Sesión</a>
+                    <a *ngIf="authService.isLoggedIn == true" class="nav-link" (click)="cerrarSesion()">Cerrar Sesión</a>
                 </li>
             </ul>
         </div>

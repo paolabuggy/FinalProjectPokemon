@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Pokemon } from '../../models/pokemon';
 import { FirestoreService } from 'src/app/servicios/firestore.service';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { collection, query, where, getDocs } from "firebase/firestore";
 
 @Component({
   selector: 'app-search-poke-form',
