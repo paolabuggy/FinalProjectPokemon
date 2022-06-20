@@ -70,8 +70,9 @@
                   <br>
                   <br>
                   <div class="d-flex justify-content-around">
-                    <button  (click)="MetodoLogin()" type="button" class="btn btn-warning" data-dismiss="modal">
-                      <a [routerLink]="['/sms']"> SMS</a>
+                    <button  (click)="cambiarSMS()" type="button" class="btn btn-warning" data-dismiss="modal">
+                      <!--<a [routerLink]="['/sms']">Login por SMS</a>-->
+                      Login por SMS
                    </button>
                     <button  (click)="authService.SignIn(userEmail.value, userPwd.value)" type="button" class="btn btn-warning" data-dismiss="modal">
                         Ingresar

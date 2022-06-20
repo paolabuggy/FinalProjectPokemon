@@ -6,7 +6,7 @@
             <h1 class="h2">Perfil de usuario</h1>
             <!-- Muestra los datos del usuario cuando logged in -->
             <div *ngIf="authService.userData as user">
-                <div class="col-md-12">
+                <div *ngIf="authService.userData.displayName!=null" class="col-md-12">
                     <div class="media">
                         <img class="align-self-start mr-5 img-thumbnail rounded-circle"
                             src="../../assets/img/poke-user.jpg" alt="" height="250px" width="250px">
@@ -21,6 +21,22 @@
                             'Nombre: '+user.displayName+
                             '\nUID: '+user.uid+
                             '\nEmail: '+user.email" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="authService.userData.displayName==null" class="col-md-12">
+                    <div class="media">
+                        <img class="align-self-start mr-5 img-thumbnail rounded-circle"
+                            src="../../assets/img/poke-user.jpg" alt="" height="250px" width="250px">
+                        <div class="media-body">
+                            <br>
+                            <h4>Bienvenido</h4>
+                            <p>User ID: <br><strong>{{user.uid}}</strong></p>
+                            <p>Número de teléfono: <br><strong>{{user.phoneNumber}}</strong></p>
+                            <h4>Guarda tus datos escaneando el código!</h4>
+                            <qrcode [qrdata]="
+                            'Telefono: '+user.phoneNumber+
+                            '\nUID: '+user.uid" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
                         </div>
                     </div>
                 </div>
@@ -47,13 +63,7 @@
         <div *ngIf="EncontradoUser==true"><!--Si llega a encontrar el usuario, esto se debe poner en true-->
         </div>
     </div>
-    <ng-template #contenidoAdmin>
-        
-  
-
-        
-       
-    </ng-template>
+    <ng-template #contenidoAdmin></ng-template>
     <br>
     
 </div>

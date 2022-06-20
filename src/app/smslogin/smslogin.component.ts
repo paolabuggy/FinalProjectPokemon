@@ -1,4 +1,23 @@
 import { Component, OnInit } from '@angular/core';
+import { WindowService } from 'src/app/servicios/window.service';
+import { AuthService } from 'src/app/servicios/auth.service';
+
+import firebase from "firebase/compat/app";
+import 'firebase/compat/auth'; 
+import 'firebase/compat/firestore';
+
+export class PhoneNumber{
+  country: string = "";
+  area: string = "";
+  prefix: string = "";
+  line: string = "";
+
+  //Format phone numbers as E.164
+  get e164(){
+    const num = this.country + this.area + this.prefix + this.line;
+    return `+${num}`;
+  }
+}
 
 @Component({
   selector: 'app-smslogin',
@@ -7,11 +26,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SMSLoginComponent implements OnInit {
 
-  constructor() { }
-  ngOnInit(){
-    
-  }
-  /*
   public Uname: string = '';
   public Password:string='';
   public Metodo:boolean=true;
@@ -24,8 +38,9 @@ export class SMSLoginComponent implements OnInit {
   verificationCode: string = "";
   user: any;
 
-  constructor(public authService: AuthService, private win: WindowService) { }
-
+  constructor(public authService: AuthService, private win: WindowService) { 
+  }
+  
   ngOnInit(): void {
     this.windowRef = this.win.windowRef;
     this.windowRef.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
@@ -65,7 +80,6 @@ export class SMSLoginComponent implements OnInit {
       this.Metodo=true;
     }
   }
-  */
  
 
 
