@@ -44,7 +44,7 @@ export class SearchPokeFormComponent implements OnInit {
     pk_spe:0,
     imgUrl:""
   };
-  
+
   public general: any = '';
   public advice: string = "";
 
@@ -98,16 +98,6 @@ export class SearchPokeFormComponent implements OnInit {
       .get().subscribe((doc: any) => {
         if (doc.exists) {
           console.log("Document data:", doc.data());
-          /*this.Pid = busq;
-          this.Pnombre = doc.data()['nombre'];
-          this.Ptipo = doc.data()['tipo'];
-          this.Pfoto = doc.data()['foto'];
-          this.Pinfo = doc.data()['info'];
-          this.Patq = doc.data()['ataque'];
-          this.Pdef = doc.data()['defensa'];
-          this.Pspe = doc.data()['especial'];
-          this.Pspa = doc.data()['velocidad'];
-          alert(this.Pnombre);*/
           this.result.id = busq;
           this.result.pk_name = doc.data()['nombre'];
           this.result.pk_type = doc.data()['tipo'];
@@ -137,13 +127,8 @@ export class SearchPokeFormComponent implements OnInit {
       this.Pnombre = "";
       this.Pnombre = pokemon.data.nombre;
       if (this.Pnombre == busq) {
-        /*console.log(this.Pnombre);
-        this.busqueda.push({
-            id: pokemon.data.id,
-            data: pokemon.data
-        });*/
-        this.result.id = busq;
-        this.result.pk_name = pokemon.data.nombre;
+        this.result.id = pokemon.id;
+        this.result.pk_name = busq;
         this.result.pk_type = pokemon.data.tipo;
         this.result.imgUrl = pokemon.data.foto;
         this.result.pk_info = pokemon.data.info;
@@ -154,11 +139,6 @@ export class SearchPokeFormComponent implements OnInit {
         this.PasarDatos.emit(this.result);
       }
     }
-
-    //console.log(this.busqueda[0].data.nombre);
-    //console.log(this.busqueda);
-    //this.busqueda.splice(0, this.busqueda.length);
-    //console.log(this.busqueda);
   }
 
   BuscaStats() {
@@ -182,10 +162,7 @@ export class SearchPokeFormComponent implements OnInit {
         });
       }
     }
-    //console.log(this.busqueda[0].data.nombre);
-    console.log(this.busqueda[0].data.nombre);
-    //this.busqueda.splice(0, this.busqueda.length);
-    //console.log(this.busqueda);
+    
   }
 
 }

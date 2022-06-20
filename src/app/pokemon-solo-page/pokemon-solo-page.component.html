@@ -8,16 +8,16 @@
             <h2>{{obj.pk_name}}</h2>
             <div class="pokeform">
                 <label>Nombre del Pokemon</label>
-                <input id="nombref" type="text" class="form-control inputs" [placeholder]="obj.pk_name">
+                <input id="nombref" type="text" class="form-control inputs" [value]="obj.pk_name">
                 <br>
                 <label>URL de la imagen</label>
-                <input id="fotof" type="text" class="form-control inputs" [placeholder]="obj.imgUrl">
+                <input id="fotof" type="text" class="form-control inputs" [value]="obj.imgUrl">
                 <br>
                 <label>Entrada Pokedex</label>
-                <textarea id="entryf" class="form-control inputs" id="exampleFormControlTextarea1" rows="3" [placeholder]="obj.pk_info"></textarea>
+                <textarea id="entryf" class="form-control inputs" id="exampleFormControlTextarea1" rows="3" [value]="obj.pk_info"></textarea>
                 <br>
                 <label>Tipo Pokemon</label>
-                <input id="tipof" type="text" class="form-control inputs" [placeholder]="obj.pk_type">
+                <input id="tipof" type="text" class="form-control inputs" [value]="obj.pk_type">
                 <br>
                 <div class="d-flex  justify-content-evenly">
                     <div>
