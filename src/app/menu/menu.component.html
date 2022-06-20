@@ -30,9 +30,7 @@
                         <li *ngIf="authService.isLoggedIn !== true"><a class="dropdown-item" [routerLink]="['/login']">Iniciar Sesion</a></li>
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/graphs']">Gráficas</a>
-                </li>
+                
                 <li class="nav-item">
                     <a *ngIf="authService.isLoggedIn == true" class="nav-link" (click)="cerrarSesion()">Cerrar Sesión</a>
                 </li>

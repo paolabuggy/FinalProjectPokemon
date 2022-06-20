@@ -34,7 +34,7 @@
         <section>
             <div class="d-flex justify-content-around">
                 <app-pokemon-form></app-pokemon-form>
-                <!--POR AQUI MANDAS LOS DATOS TRANSPORTADOS HACIA UN METODO PERO YA DE ESTE TS (RecibirDatos)-->
+                <!--POR AQUI MANDAS LOS DATOS TRANSPORTADOS HACIA UN METODO PERO YA DE ESTE TS -->
                 <app-search-poke-form (PasarDatos)="RecibirDatos($event)"></app-search-poke-form>
                 <app-search-user-form></app-search-user-form>
             </div>
@@ -46,6 +46,7 @@
         </div>
         <div *ngIf="EncontradoUser==true"><!--Si llega a encontrar el usuario, esto se debe poner en true-->
         </div>
+        <app-poke-graphs></app-poke-graphs>
     </div>
     <ng-template #contenidoAdmin>
         
