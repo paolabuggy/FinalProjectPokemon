@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { WindowService } from 'src/app/servicios/window.service';
 import { AuthService } from 'src/app/servicios/auth.service';
+import { Router } from '@angular/router';
 
 import firebase from "firebase/compat/app";
 import 'firebase/compat/auth'; 
@@ -38,7 +39,7 @@ export class LoginFormComponent implements OnInit {
   verificationCode: string = "";
   user: any;
 
-  constructor(public authService: AuthService, private win: WindowService) { }
+  constructor(public authService: AuthService, private win: WindowService, public router: Router) { }
 
   ngOnInit(): void {
     this.windowRef = this.win.windowRef;
@@ -69,6 +70,12 @@ export class LoginFormComponent implements OnInit {
 
   logOut(){
     firebase.auth().signOut().catch( (error: any) => console.log(error) );
+  }
+
+  cambiarSMS(){
+    this.router.navigate(['/sms']).then(() => {
+      window.location.reload();
+    });
   }
 
   MetodoLogin(){
