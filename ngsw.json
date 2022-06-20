@@ -1,0 +1,125 @@
+{
+  "configVersion": 1,
+  "timestamp": 1655697574576,
+  "index": "https://paolabuggy.github.io/FinalProjectPokemon/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "https://paolabuggy.github.io/FinalProjectPokemon/favicon.ico",
+        "https://paolabuggy.github.io/FinalProjectPokemon/index.html",
+        "https://paolabuggy.github.io/FinalProjectPokemon/main.54e008c793a6a675.js",
+        "https://paolabuggy.github.io/FinalProjectPokemon/manifest.webmanifest",
+        "https://paolabuggy.github.io/FinalProjectPokemon/polyfills.baec26b88800b788.js",
+        "https://paolabuggy.github.io/FinalProjectPokemon/runtime.dbb3ecaed4778d5b.js",
+        "https://paolabuggy.github.io/FinalProjectPokemon/scripts.5913ee024407ce83.js",
+        "https://paolabuggy.github.io/FinalProjectPokemon/styles.1e7369399ef964fe.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "https://paolabuggy.github.io/FinalProjectPokemon/PokemonallBackground.39b037542d0f1017.jpg",
+        "https://paolabuggy.github.io/FinalProjectPokemon/assets/icons/icon-114x114.png",
+        "https://paolabuggy.github.io/FinalProjectPokemon/assets/icons/icon-128x128.png",
+        "https://paolabuggy.github.io/FinalProjectPokemon/assets/icons/icon-144x144.png",
+        "https://paolabuggy.github.io/FinalProjectPokemon/assets/icons/icon-152x152.png",
+        "https://paolabuggy.github.io/FinalProjectPokemon/assets/icons/icon-192x192.png",
+        "https://paolabuggy.github.io/FinalProjectPokemon/assets/icons/icon-384x384.png",
+        "https://paolabuggy.github.io/FinalProjectPokemon/assets/icons/icon-512x512.png",
+        "https://paolabuggy.github.io/FinalProjectPokemon/assets/icons/icon-72x72.png",
+        "https://paolabuggy.github.io/FinalProjectPokemon/assets/icons/icon-96x96.png",
+        "https://paolabuggy.github.io/FinalProjectPokemon/assets/img/Cinderace.png",
+        "https://paolabuggy.github.io/FinalProjectPokemon/assets/img/PokemonallBackground.jpg",
+        "https://paolabuggy.github.io/FinalProjectPokemon/assets/img/aegislash.png",
+        "https://paolabuggy.github.io/FinalProjectPokemon/assets/img/background.jpg",
+        "https://paolabuggy.github.io/FinalProjectPokemon/assets/img/dummy-user.png",
+        "https://paolabuggy.github.io/FinalProjectPokemon/assets/img/espeon.png",
+        "https://paolabuggy.github.io/FinalProjectPokemon/assets/img/gengar.png",
+        "https://paolabuggy.github.io/FinalProjectPokemon/assets/img/greedent.png",
+        "https://paolabuggy.github.io/FinalProjectPokemon/assets/img/hoopa.png",
+        "https://paolabuggy.github.io/FinalProjectPokemon/assets/img/pingu.png",
+        "https://paolabuggy.github.io/FinalProjectPokemon/assets/img/poke-user.jpg",
+        "https://paolabuggy.github.io/FinalProjectPokemon/assets/img/poketeam.jpg",
+        "https://paolabuggy.github.io/FinalProjectPokemon/assets/img/portal.png",
+        "https://paolabuggy.github.io/FinalProjectPokemon/assets/img/snorlax.png",
+        "https://paolabuggy.github.io/FinalProjectPokemon/assets/img/unite-logo.png",
+        "https://paolabuggy.github.io/FinalProjectPokemon/assets/img/unite1.jpg",
+        "https://paolabuggy.github.io/FinalProjectPokemon/assets/img/wigglypuff.png",
+        "https://paolabuggy.github.io/FinalProjectPokemon/poketeam.d9869532b74f55c3.jpg",
+        "https://paolabuggy.github.io/FinalProjectPokemon/unite1.94b10ed370180650.jpg"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "https://paolabuggy.github.io/FinalProjectPokemon/PokemonallBackground.39b037542d0f1017.jpg": "a7c60c2f2ac18449153d65ad5c119fa375159971",
+    "https://paolabuggy.github.io/FinalProjectPokemon/assets/icons/icon-114x114.png": "fb0b5feb515921bc9ecfd1e5d90bfd2a9672199c",
+    "https://paolabuggy.github.io/FinalProjectPokemon/assets/icons/icon-128x128.png": "a642e9d362693641a4309426ac2221f3da61a7eb",
+    "https://paolabuggy.github.io/FinalProjectPokemon/assets/icons/icon-144x144.png": "07ea1c84f769841ecac88198e6a548a53f12d2c3",
+    "https://paolabuggy.github.io/FinalProjectPokemon/assets/icons/icon-152x152.png": "8337697348999e1896a0f87a03ae50d5b23f17d0",
+    "https://paolabuggy.github.io/FinalProjectPokemon/assets/icons/icon-192x192.png": "11bae5a242a7b11dfd6b093ba2ff28934544b780",
+    "https://paolabuggy.github.io/FinalProjectPokemon/assets/icons/icon-384x384.png": "61f61fdfbf1bfa29dbcfc839e3189f9809b24b6d",
+    "https://paolabuggy.github.io/FinalProjectPokemon/assets/icons/icon-512x512.png": "1e8b1ce8606a3abde0e0e4aca168f70d7537c5cd",
+    "https://paolabuggy.github.io/FinalProjectPokemon/assets/icons/icon-72x72.png": "1d30ab1dc021e8443919ac276fa585496c3bbccc",
+    "https://paolabuggy.github.io/FinalProjectPokemon/assets/icons/icon-96x96.png": "6cf27853d41b080fa399a4b7de373405ca2d5749",
+    "https://paolabuggy.github.io/FinalProjectPokemon/assets/img/Cinderace.png": "0e2649a9fc68d197b70e9f3de4f1673658ff1e53",
+    "https://paolabuggy.github.io/FinalProjectPokemon/assets/img/PokemonallBackground.jpg": "a7c60c2f2ac18449153d65ad5c119fa375159971",
+    "https://paolabuggy.github.io/FinalProjectPokemon/assets/img/aegislash.png": "d5f9c268ccebf1bcea4cee51a3aee742d124f17e",
+    "https://paolabuggy.github.io/FinalProjectPokemon/assets/img/background.jpg": "93ae6e31568848be2c164226c061cc67d6952780",
+    "https://paolabuggy.github.io/FinalProjectPokemon/assets/img/dummy-user.png": "8bbd5201749af0bad9ab067e1308d0dbbd68929c",
+    "https://paolabuggy.github.io/FinalProjectPokemon/assets/img/espeon.png": "f8ee668cf2937c6e1f6a947a1baa03d3fcb291dc",
+    "https://paolabuggy.github.io/FinalProjectPokemon/assets/img/gengar.png": "4df18f24095cf9eb74c2d2da1b2aa3987dab96fc",
+    "https://paolabuggy.github.io/FinalProjectPokemon/assets/img/greedent.png": "34e2e3577a351c0ce4ee0d0d91093e20a3cd141b",
+    "https://paolabuggy.github.io/FinalProjectPokemon/assets/img/hoopa.png": "2a45b760b54ceebc043ce590db46b567ff856e1a",
+    "https://paolabuggy.github.io/FinalProjectPokemon/assets/img/pingu.png": "f2efd380c6313351063a9a5f0ee41b914720da5a",
+    "https://paolabuggy.github.io/FinalProjectPokemon/assets/img/poke-user.jpg": "2898fce67e3731e438aecd0fb171f630d367150c",
+    "https://paolabuggy.github.io/FinalProjectPokemon/assets/img/poketeam.jpg": "43b0cfa2dd7fbcc9764fd4f862961c05be67307c",
+    "https://paolabuggy.github.io/FinalProjectPokemon/assets/img/portal.png": "89828db5f82189f3d55733340b736215d4b24cbb",
+    "https://paolabuggy.github.io/FinalProjectPokemon/assets/img/snorlax.png": "6e6ba0ea3264f05447d5d8975760c65e85004d6e",
+    "https://paolabuggy.github.io/FinalProjectPokemon/assets/img/unite-logo.png": "1a8ed09cd9df97ffa8f243abc6471aacbd130aec",
+    "https://paolabuggy.github.io/FinalProjectPokemon/assets/img/unite1.jpg": "0989490b18971bf514b5b2236ff67243d2acf1da",
+    "https://paolabuggy.github.io/FinalProjectPokemon/assets/img/wigglypuff.png": "3d1ba5a6ca9f72100381032044cdb7c15bd755c1",
+    "https://paolabuggy.github.io/FinalProjectPokemon/favicon.ico": "1afb5f384bda31f627552be7d676edeb7f6e5676",
+    "https://paolabuggy.github.io/FinalProjectPokemon/index.html": "96e6982db7f9342e625ec301f798e044f7dd0c3f",
+    "https://paolabuggy.github.io/FinalProjectPokemon/main.54e008c793a6a675.js": "785de6cdb704c30adcbb6cea1fa8585787037c41",
+    "https://paolabuggy.github.io/FinalProjectPokemon/manifest.webmanifest": "9bce246bff6d6cf652019f754558e25666802ffa",
+    "https://paolabuggy.github.io/FinalProjectPokemon/poketeam.d9869532b74f55c3.jpg": "43b0cfa2dd7fbcc9764fd4f862961c05be67307c",
+    "https://paolabuggy.github.io/FinalProjectPokemon/polyfills.baec26b88800b788.js": "19ce6cecc7a94289653885bd52cbd5989b1e7eed",
+    "https://paolabuggy.github.io/FinalProjectPokemon/runtime.dbb3ecaed4778d5b.js": "bda170d12153c55b9b81552328e4923919c6fa27",
+    "https://paolabuggy.github.io/FinalProjectPokemon/scripts.5913ee024407ce83.js": "63fed35e310243854c506a194e683b00f5dd80bc",
+    "https://paolabuggy.github.io/FinalProjectPokemon/styles.1e7369399ef964fe.css": "42f4ab8a6968798862529b1360d961d440570104",
+    "https://paolabuggy.github.io/FinalProjectPokemon/unite1.94b10ed370180650.jpg": "0989490b18971bf514b5b2236ff67243d2acf1da"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
