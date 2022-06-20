@@ -12,10 +12,10 @@ import 'firebase/compat/auth';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-
   nombre?: string;
   public aux: any = '';
   public pokemones: any = [];
+  chec: boolean=true;
 
   constructor(public authService: AuthService, private router: Router, private firestoreService: FirestoreService) {
     this.firestoreService.getPokemones().subscribe((pokemonesSnapshot) => {
@@ -39,21 +39,21 @@ export class MenuComponent implements OnInit {
     this.searchUnPoke(this.nombre);
   }
 
-
-
   searchUnPoke(nompoke: any): void {
+    this.chec=true;
     this.pokemones.forEach((element: any) => {
       if (element.data.nombre == nompoke) {
-
-
         this.router.navigate(['/pokemonPage', element.data.nombre, element.data.foto, element.data.info]).then(() => {
           window.location.reload();
         });
-
-
-        return
+        this.chec=false;
       }
     });
+      if(this.chec){
+        this.router.navigate(['/pokemonPage', nompoke, -1, -1]).then(() => {
+          window.location.reload();
+        });
+      }
   }
 
   cerrarSesion() {
@@ -65,7 +65,5 @@ export class MenuComponent implements OnInit {
         this.router.navigate(['login']);
       }).catch((error: any) => console.log(error));
     }
-
   }
-
 }

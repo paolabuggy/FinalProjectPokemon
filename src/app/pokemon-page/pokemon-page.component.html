@@ -1,5 +1,5 @@
 
-    <div class="carcasa">
+    <div *ngIf="info!=-1" class="carcasa">
         <div class="pantalla">
             <div class="nombre"><h1>{{nombre}}</h1></div>
             <div class="imagenentrada">
@@ -10,10 +10,18 @@
         <div class="accesorios">
             <div class="cross"></div>
             <div class="circulos">
-                <button class="circle"><div class="pausa" (click)="resumir()"></div></button>
-                <button class="circle"><div class="play" (click)="pausa()"></div></button>
-                <button class="circle"><div class="stop" (click)="habla()"></div></button>
+                <button class="circle"><div class="pausa" (click)="pausa()"></div></button>
+                <button class="circle"><div class="play" (click)="habla()"></div></button>
+                <button class="circle"><div class="stop" (click)="resumir()"></div></button>
             </div>
+        </div>
+    </div>
 
+    <div class="contenedor rounded" *ngIf="info==-1">
+        <div id="msjImagen">
+            <img src="../../assets/img/snorlax.png" alt="" height="350px">
+        </div>
+        <div id="msjBusqueda" class="rounded">
+            <h2>Lo sentimos, nuestros Pokémones no encontraron a "{{nombre}}" en el pokedex de nuestra página.</h2>
         </div>
     </div>
