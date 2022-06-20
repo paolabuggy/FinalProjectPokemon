@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1655698010954,
+  "timestamp": 1655701441634,
   "index": "https://paolabuggy.github.io/FinalProjectPokemon/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "https://paolabuggy.github.io/FinalProjectPokemon/favicon.ico",
         "https://paolabuggy.github.io/FinalProjectPokemon/index.html",
-        "https://paolabuggy.github.io/FinalProjectPokemon/main.06f5aa7fb3e3336b.js",
+        "https://paolabuggy.github.io/FinalProjectPokemon/main.38c6137999de8390.js",
         "https://paolabuggy.github.io/FinalProjectPokemon/manifest.webmanifest",
         "https://paolabuggy.github.io/FinalProjectPokemon/polyfills.baec26b88800b788.js",
         "https://paolabuggy.github.io/FinalProjectPokemon/runtime.dbb3ecaed4778d5b.js",
@@ -93,8 +93,8 @@
     "https://paolabuggy.github.io/FinalProjectPokemon/assets/img/unite1.jpg": "0989490b18971bf514b5b2236ff67243d2acf1da",
     "https://paolabuggy.github.io/FinalProjectPokemon/assets/img/wigglypuff.png": "3d1ba5a6ca9f72100381032044cdb7c15bd755c1",
     "https://paolabuggy.github.io/FinalProjectPokemon/favicon.ico": "1afb5f384bda31f627552be7d676edeb7f6e5676",
-    "https://paolabuggy.github.io/FinalProjectPokemon/index.html": "f0a799a9d74422c34c3685ad98ee5b6d47e34a8e",
-    "https://paolabuggy.github.io/FinalProjectPokemon/main.06f5aa7fb3e3336b.js": "709783bb884d78e7d3dbbf4055e16e618a178ca4",
+    "https://paolabuggy.github.io/FinalProjectPokemon/index.html": "b35d12afa2c3e299abdddb5e864e9cfffbfe6ed5",
+    "https://paolabuggy.github.io/FinalProjectPokemon/main.38c6137999de8390.js": "a2f2705fa7e166b2d353477f0c3c71947d26325e",
     "https://paolabuggy.github.io/FinalProjectPokemon/manifest.webmanifest": "9bce246bff6d6cf652019f754558e25666802ffa",
     "https://paolabuggy.github.io/FinalProjectPokemon/poketeam.d9869532b74f55c3.jpg": "43b0cfa2dd7fbcc9764fd4f862961c05be67307c",
     "https://paolabuggy.github.io/FinalProjectPokemon/polyfills.baec26b88800b788.js": "19ce6cecc7a94289653885bd52cbd5989b1e7eed",
