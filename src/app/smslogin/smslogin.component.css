@@ -1,0 +1,47 @@
+*{
+    margin-top: 10px;
+}
+.centrar{
+    background-color: rgba(0, 0, 0, 0.466);
+
+    border-radius: 20px;
+
+    padding: 50px;
+    
+}
+
+.centroo{
+    width: 100%;
+    text-align: center;
+}
+.centroflex{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.telefono{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.centroboton{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-left: 30%;
+    padding-right: 30%;
+}
+
+.textito{
+    font-size: 30px;
+    color: blueviolet;
+}
+
+.inputs{
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #2e0024;
+
+    color: white;
+}
