@@ -18,11 +18,14 @@
         <button (click)="sendLoginCode()" class="btn btn-warning">Enviar código de login por SMS</button>
     </div>
         <div *ngIf="windowRef.confirmationResult"> 
+            <div class="centroboton">
             <label for="code" id="lbNum">Ingrese el código de verificación</label>
             <input type="text" name="code" id="num" [(ngModel)]="verificationCode">
             <div class="formh5 alert alert-warning" role="alert" id="errorDatos" hidden>
               {{advice}}
             </div>
+            </div>
+            
             
             <div class="d-flex justify-content-around">
 

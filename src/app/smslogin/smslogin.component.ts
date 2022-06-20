@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { WindowService } from 'src/app/servicios/window.service';
 import { AuthService } from 'src/app/servicios/auth.service';
+import { Router } from '@angular/router';
 
 import firebase from "firebase/compat/app";
 import 'firebase/compat/auth'; 
@@ -38,7 +39,7 @@ export class SMSLoginComponent implements OnInit {
   verificationCode: string = "";
   user: any;
 
-  constructor(public authService: AuthService, private win: WindowService) { 
+  constructor(public authService: AuthService, private win: WindowService,  private router: Router) { 
   }
   
   ngOnInit(): void {
@@ -63,6 +64,7 @@ export class SMSLoginComponent implements OnInit {
     .then( (result: any) => {
       this.user = result.user;
       localStorage.setItem('sesion','sms');
+      this.router.navigate(['/home']);
     }).catch( (error: any) => {
       this.advice="Código incorrecto";
     });
