@@ -1,44 +1,40 @@
 <div class="PokeProfile">
     <div class="">
         <div class="pokeMarc">
-            <img src="../../assets/img/Cinderace.png"><!--Aqui va el link de la imagen-->
+            <img [src]="obj.imgUrl">
         </div>
-        
         <div>
             <br>
-            <h2>Cinderace</h2>
+            <h2>{{obj.pk_name}}</h2>
             <div class="pokeform">
                 <label>Nombre del Pokemon</label>
-                <input id="nombref" type="text" class="form-control inputs">
+                <input id="nombref" type="text" class="form-control inputs" [placeholder]="obj.pk_name">
+                <br>
+                <label>URL de la imagen</label>
+                <input id="fotof" type="text" class="form-control inputs" [placeholder]="obj.imgUrl">
                 <br>
                 <label>Entrada Pokedex</label>
-                <textarea id="entryf" class="form-control inputs" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <textarea id="entryf" class="form-control inputs" id="exampleFormControlTextarea1" rows="3" [placeholder]="obj.pk_info"></textarea>
                 <br>
                 <label>Tipo Pokemon</label>
-                <select id="tipof" class="form-select" aria-label="Default select example">
-                    <option value="Ofensivo">Ofensivo</option>
-                    <option value="Defensivo">Defensivo</option>
-                    <option value="Apoyo">Apoyo</option>
-                    <option value="Agil">Agil</option>
-                    <option value="Equilibrado">Equilibrado</option>
-                </select>
+                <input id="tipof" type="text" class="form-control inputs" [placeholder]="obj.pk_type">
                 <br>
                 <div class="d-flex  justify-content-evenly">
                     <div>
                       <label>Attack </label><br>
-                      <input type="number" id="atqe" name="points" step="1" min="0" max="100" value="0">
+                      <input type="number" id="atqe" name="points" step="1" min="0" max="100" [value]="obj.pk_atq">
                      </div>
                      <div>
                       <label>Special </label><br>
-                      <input type="number" id="spaf" name="points" step="1" min="0" max="100" value="0">
+                      <input type="number" id="spaf" name="points" step="1" min="0" max="100" [value]="obj.pk_spa">
                      </div>
                      <div>
                       <label>Defense </label><br>
-                      <input type="number" id="deff" name="points" step="1" min="0" max="100" value="0">
+                      <input type="number" id="deff" name="points" step="1" min="0" max="100" [value]="obj.pk_def">
                      </div>
                      <div>
                       <label>Speed </label><br>
-                      <input type="number" id="spef" name="points" step="1" min="0" max="100" value="0">
+                      <input type="number" id="spef" name="points" step="1" min="0" max="100" [value]="obj.pk_spe">
                      </div>
                 </div>
                 <br>

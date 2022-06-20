@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FirestoreService } from 'src/app/servicios/firestore.service';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 @Component({
   selector: 'app-search-user-form',
@@ -19,7 +18,7 @@ export class SearchUserFormComponent implements OnInit {
   public usuarios: any = [];
   public resultados: any = [];
 
-  constructor(private firestoreService: FirestoreService, private firestore: AngularFirestore) { }
+  constructor(private firestoreService: FirestoreService) { }
 
   ngOnInit(): void {
     this.firestoreService.getUsuarios().subscribe((usersSnapshot: any) => {

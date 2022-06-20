@@ -1,9 +1,7 @@
-import { Component, OnInit ,Input, Output, EventEmitter} from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Pokemon } from '../../models/pokemon';
 import { FirestoreService } from 'src/app/servicios/firestore.service';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-
-
 
 
 @Component({
@@ -12,11 +10,11 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
   styleUrls: ['./search-poke-form.component.css']
 })
 export class SearchPokeFormComponent implements OnInit {
-  @Input() Datos:string="";
+  @Input() Datos: string = "";
   //AQUI DECIDES EL TIPO DE DATO QUE LE VAS A PASAR <string>
-  @Output() PasarDatos=new EventEmitter<string>();
-  
-  
+  //@Output() PasarDatos=new EventEmitter<string>();
+  @Output() PasarDatos = new EventEmitter<Pokemon>();
+
   public ArrUsuarios: Pokemon[] = [];
   public Pid: string = '';
   public Pnombre: string = '';
@@ -34,8 +32,21 @@ export class SearchPokeFormComponent implements OnInit {
 
   public pokemones: any = [];
   public busqueda: any = [];
-
+  public resultado: any;
+  public result: Pokemon = {
+    id:"",
+    pk_info:"",
+    pk_name:"",
+    pk_type:"",
+    pk_atq:0,
+    pk_spa:0,
+    pk_def:0,
+    pk_spe:0,
+    imgUrl:""
+  };
+  
   public general: any = '';
+  public advice: string = "";
 
   constructor(private firestoreService: FirestoreService, private firestore: AngularFirestore) { }
 
@@ -53,8 +64,8 @@ export class SearchPokeFormComponent implements OnInit {
 
   //MEDIANTE EL EMIT PASAS COMO PARAMETRO LA INFO A PASAR AL 
   //HTML DE CUENTA.HTML
-  PasarInfo(){
-    this.PasarDatos.emit("Estos datos ya estan siendo alertados en un metodo fuera del modal ");
+  PasarInfo() {
+    //this.PasarDatos.emit("Estos datos ya estan siendo alertados en un metodo fuera del modal ");
   }
 
   SeleccionarMetodo(opc: number) {
@@ -80,21 +91,6 @@ export class SearchPokeFormComponent implements OnInit {
 
 
   BuscaID() {
-    //Aqui implementar metodo de busqueda en la BD
-    /*let busq:string="";
-    busq=(<HTMLInputElement>document.getElementById('idf')).value;
-    let editSubscribe = this.firestoreService.getPokemon(busq).subscribe((pokemon:any) => {
-      this.Pid=busq;
-      this.Pnombre=pokemon.payload.data()['nombre'];
-      this.Ptipo=pokemon.payload.data()['tipo'];
-      this.Pfoto=pokemon.payload.data()['foto'];
-      this.Pinfo=pokemon.payload.data()['info'];
-      this.Patq=pokemon.payload.data()['ataque'];
-      this.Pdef=pokemon.payload.data()['defensa'];
-      this.Pspe=pokemon.payload.data()['especial'];
-      this.Pspa=pokemon.payload.data()['velocidad'];
-      editSubscribe.unsubscribe();
-    });*/
     let busq: string = "";
     busq = (<HTMLInputElement>document.getElementById('idf')).value;
 
@@ -102,7 +98,7 @@ export class SearchPokeFormComponent implements OnInit {
       .get().subscribe((doc: any) => {
         if (doc.exists) {
           console.log("Document data:", doc.data());
-          this.Pid = busq;
+          /*this.Pid = busq;
           this.Pnombre = doc.data()['nombre'];
           this.Ptipo = doc.data()['tipo'];
           this.Pfoto = doc.data()['foto'];
@@ -111,54 +107,58 @@ export class SearchPokeFormComponent implements OnInit {
           this.Pdef = doc.data()['defensa'];
           this.Pspe = doc.data()['especial'];
           this.Pspa = doc.data()['velocidad'];
-          alert(this.Pnombre);
+          alert(this.Pnombre);*/
+          this.result.id = busq;
+          this.result.pk_name = doc.data()['nombre'];
+          this.result.pk_type = doc.data()['tipo'];
+          this.result.imgUrl = doc.data()['foto'];
+          this.result.pk_info = doc.data()['info'];
+          this.result.pk_atq = doc.data()['ataque'];
+          this.result.pk_def = doc.data()['defensa'];
+          this.result.pk_spa = doc.data()['especial'];
+          this.result.pk_spe = doc.data()['velocidad'];
+          this.PasarDatos.emit(this.result);
         }
         else {
-          console.log("no hay tal pokemon");
+          this.advice = "No se encontró al Pokemón";
+          (<HTMLInputElement>document.getElementById('aviso')).hidden = false;
+          (<HTMLInputElement>document.getElementById('aviso')).value = this.advice;
         }
       });
-
-    //alert(this.Pid);
-    //alert(this.general);
   }
 
   BuscaNombre() {
     //Aqui implementar metodo de busqueda en la BD
     let busq: string = "";
-    
+
     busq = (<HTMLInputElement>document.getElementById('Unamef')).value;
 
-    /*
-    this.pokeInfo=this.firestore.collection('pokemones', ref => ref.where('nombre', '==', busq))
-    .get().subscribe((pokemonesSnapshot) => {
-      this.busqueda = [];
-      pokemonesSnapshot.forEach((pokemonData: any) => {
-        this.busqueda.push({
-          id: pokemonData.id,
-          data: pokemonData.data()
-        });
-      });
-    });
-    console.log(this.busqueda);
-    */
-    
-    //console.log("Document data:", this.pokeInfo);
-   
-    for(let pokemon of this.pokemones){
-      this.Pnombre="";
+    for (let pokemon of this.pokemones) {
+      this.Pnombre = "";
       this.Pnombre = pokemon.data.nombre;
-      if(this.Pnombre==busq){
-        console.log(this.Pnombre);
+      if (this.Pnombre == busq) {
+        /*console.log(this.Pnombre);
         this.busqueda.push({
             id: pokemon.data.id,
             data: pokemon.data
-        });
+        });*/
+        this.result.id = busq;
+        this.result.pk_name = pokemon.data.nombre;
+        this.result.pk_type = pokemon.data.tipo;
+        this.result.imgUrl = pokemon.data.foto;
+        this.result.pk_info = pokemon.data.info;
+        this.result.pk_atq = pokemon.data.ataque;
+        this.result.pk_def = pokemon.data.defensa;
+        this.result.pk_spa = pokemon.data.especial;
+        this.result.pk_spe = pokemon.data.velocidad;
+        this.PasarDatos.emit(this.result);
       }
     }
+
     //console.log(this.busqueda[0].data.nombre);
-    console.log(this.busqueda);
-    this.busqueda.splice(0, this.busqueda.length);
-    console.log(this.busqueda);
+    //console.log(this.busqueda);
+    //this.busqueda.splice(0, this.busqueda.length);
+    //console.log(this.busqueda);
   }
 
   BuscaStats() {
@@ -169,16 +169,16 @@ export class SearchPokeFormComponent implements OnInit {
     this.Pspe = parseInt((<HTMLInputElement>document.getElementById('spef')).value);
     alert(this.Patq);
 
-    for(let pokemon of this.pokemones){
-      this.Pnombre="";
+    for (let pokemon of this.pokemones) {
+      this.Pnombre = "";
       let atq = pokemon.data.ataque;
       let spa = pokemon.data.especial;
       let def = pokemon.data.defensa;
       let spe = pokemon.data.velocidad;
-      if(this.Patq==atq && this.Pspa==spa && this.Pdef==def && this.Pspe==spe){
+      if (this.Patq == atq && this.Pspa == spa && this.Pdef == def && this.Pspe == spe) {
         this.busqueda.push({
-            id: pokemon.data.id,
-            data: pokemon.data
+          id: pokemon.data.id,
+          data: pokemon.data
         });
       }
     }
@@ -187,81 +187,5 @@ export class SearchPokeFormComponent implements OnInit {
     //this.busqueda.splice(0, this.busqueda.length);
     //console.log(this.busqueda);
   }
-
-  BuscaTipo() {
-    let busq: string = "";
-    busq = (<HTMLInputElement>document.getElementById('tipof')).value;
-    alert(busq);
-    switch (busq) {
-      case 'Ofensivo':
-        for(let pokemon of this.pokemones){
-          this.Ptipo="";
-          this.Ptipo = pokemon.data.tipo;
-          if(this.Ptipo=="Ofensivo"){
-            this.busqueda.push({
-                id: pokemon.data.id,
-                data: pokemon.data
-            });
-          }
-        }
-        break;
-
-      case 'Defensivo':
-        for(let pokemon of this.pokemones){
-          this.Ptipo="";
-          this.Ptipo = pokemon.data.tipo;
-          if(this.Ptipo=="Defensivo"){
-            this.busqueda.push({
-                id: pokemon.data.id,
-                data: pokemon.data
-            });
-          }
-        }
-        break;
-
-      case 'Apoyo':
-        for(let pokemon of this.pokemones){
-          this.Ptipo="";
-          this.Ptipo = pokemon.data.tipo;
-          if(this.Ptipo=="Apoyo"){
-            this.busqueda.push({
-                id: pokemon.data.id,
-                data: pokemon.data
-            });
-          }
-        }
-        break;
-
-      case 'Agil':
-        for(let pokemon of this.pokemones){
-          this.Ptipo="";
-          this.Ptipo = pokemon.data.tipo;
-          if(this.Ptipo=="Agil"){
-            this.busqueda.push({
-                id: pokemon.data.id,
-                data: pokemon.data
-            });
-          }
-        }
-        break;
-
-      case 'Equilibrado':
-        for(let pokemon of this.pokemones){
-          this.Ptipo="";
-          this.Ptipo = pokemon.data.tipo;
-          if(this.Ptipo=="Equilibrado"){
-            this.busqueda.push({
-                id: pokemon.data.id,
-                data: pokemon.data
-            });
-          }
-        }
-        break;
-
-    }
-  }
-  
-
-
 
 }
